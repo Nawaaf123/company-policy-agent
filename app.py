@@ -1,4 +1,5 @@
 import os
+import re
 from typing import TypedDict, List
 from dotenv import load_dotenv
 
@@ -22,7 +23,7 @@ docs = []
 
 for root, dirs, files in os.walk("docs"):
     for filename in files:
-        if filename.endswith(".txt"):
+        if filename.lower().endswith((".txt", ".jsonl")):
             file_path = os.path.join(root, filename)
             loader = TextLoader(file_path, encoding="utf-8")
             loaded_docs = loader.load()
@@ -65,8 +66,8 @@ vectorstore = Chroma.from_documents(
 retriever = vectorstore.as_retriever(
     search_type="mmr",
     search_kwargs={
-        "k": 10,
-        "fetch_k": 30
+        "k": 15,
+        "fetch_k": 50
     }
 )
 
@@ -108,6 +109,42 @@ def supervisor_agent(state: AgentState):
         "intent": intent
     }
 
+def keyword_search_chunks(question: str, all_chunks, max_results: int = 10):
+    stopwords = {
+        "what", "is", "the", "for", "with", "all", "list", "show",
+        "me", "a", "an", "of", "and", "or", "to", "in", "we", "have"
+    }
+
+    tokens = re.findall(r"[a-zA-Z0-9_-]+", question.lower())
+    tokens = [token for token in tokens if len(token) > 2 and token not in stopwords]
+
+    scored_docs = []
+
+    for doc in all_chunks:
+        content_lower = doc.page_content.lower()
+        score = 0
+
+        for token in tokens:
+            if token in content_lower:
+                score += 1
+
+        # Strong boost for SKU/product catalog questions
+        if "sku" in question.lower() and "sku" in content_lower:
+            score += 5
+
+        if "nova" in question.lower() and "nova" in content_lower:
+            score += 3
+
+        if "product" in question.lower() and "product" in content_lower:
+            score += 2
+
+        if score > 0:
+            scored_docs.append((score, doc))
+
+    scored_docs.sort(key=lambda x: x[0], reverse=True)
+
+    return [doc for score, doc in scored_docs[:max_results]]
+
 
 # -----------------------------
 # 7. Retrieval Agent
@@ -115,19 +152,35 @@ def supervisor_agent(state: AgentState):
 def retrieval_agent(state: AgentState):
     print("[Retrieval Agent] Searching company documents...")
 
-    results = retriever.invoke(state["question"])
+    # Vector search
+    vector_results = retriever.invoke(state["question"])
+
+    # Keyword fallback search for SKU/product/catalog exact matches
+    keyword_results = keyword_search_chunks(state["question"], chunks, max_results=10)
+
+    # Merge results and remove duplicates
+    combined_results = []
+    seen = set()
+
+    for doc in vector_results + keyword_results:
+        source = doc.metadata.get("source", "Unknown source")
+        key = source + doc.page_content[:150]
+
+        if key not in seen:
+            seen.add(key)
+            combined_results.append(doc)
 
     retrieved_docs = []
 
     print("\n--- Retrieved Documents Preview ---")
 
-    for index, doc in enumerate(results, start=1):
+    for index, doc in enumerate(combined_results[:20], start=1):
         source = doc.metadata.get("source", "Unknown source")
         content = doc.page_content
 
         print(f"\nResult {index}")
         print(f"Source: {source}")
-        print(content[:500])
+        print(content[:700])
 
         retrieved_docs.append(f"Source: {source}\nContent: {content}")
 
@@ -154,7 +207,9 @@ Do not make up information.
 If the user asks about MR FOG products, product categories, flavors, devices, specifications, wholesale, distributor information, contact information, warranty, returns, or FAQ, answer using the retrieved MR FOG website context.
 
 If the retrieved context contains related MR FOG information, summarize it clearly.
+If internal MR FOG documents and public website documents contain different information, prefer the internal MR FOG documents because they are more structured and company-specific.
 Only say "I do not have enough information in the company documents" when the retrieved context has no relevant information at all.
+
 
 At the end of your answer, mention the source document name from the context.
 

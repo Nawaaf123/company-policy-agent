@@ -1,0 +1,78 @@
+TITLE: Privacy Policy
+SOURCE_URL: https://www.mrfog.online/pages/privacy-policy
+CATEGORY: legal / privacy
+LAST_UPDATED: 2024-10-25
+LAST_FETCHED: 2026-07-08
+
+=== PRIVACY POLICY (SUMMARY) ===
+
+OVERVIEW
+This policy describes how MR FOG Online Store collects, uses, and discloses information when a
+person uses the service, and describes privacy rights. Personal data is used to provide and
+improve the service. By using the service, the user consents to the collection and use of
+information per this policy.
+
+KEY DEFINITIONS
+- Company: MR FOG Online Store.
+- Country: Alberta, Canada.
+- Website / Service: MR FOG Online Store, https://mrfog.online.
+- Personal Data: information relating to an identified/identifiable individual.
+- Usage Data: data collected automatically from use of the service or its infrastructure.
+- Service Provider: third parties that process data on the company's behalf.
+
+TYPES OF DATA COLLECTED
+Personal Data may include: email address; first and last name; phone number; address, state,
+province, ZIP/postal code, city.
+Usage Data (collected automatically) may include: IP address, browser type/version, pages
+visited, time/date and duration of visits, unique device identifiers, and diagnostic data.
+On mobile devices it may include device type, device ID, IP, OS, and mobile browser type.
+
+TRACKING TECHNOLOGIES & COOKIES
+Uses cookies, web beacons, tags, and scripts. Cookie categories:
+- Necessary/Essential (session cookies): authenticate users, prevent fraud, enable core
+  services.
+- Cookies Notice Acceptance (persistent): record whether users accepted cookie use.
+- Functionality (persistent): remember choices such as login details or language preference.
+Users can instruct their browser to refuse cookies, but some features may then be unavailable.
+
+USE OF PERSONAL DATA
+To provide/maintain and monitor the service; manage the user's account; perform the purchase
+contract; contact the user (email, calls, SMS, push notifications); provide news, special
+offers, and general marketing (unless opted out); manage user requests; handle business
+transfers (mergers/acquisitions); and for analysis, usage trends, campaign effectiveness, and
+service improvement.
+
+RETENTION
+Personal data is retained only as long as necessary for the stated purposes and to comply with
+legal obligations, resolve disputes, and enforce agreements. Usage data is generally retained
+for a shorter period unless needed for security/functionality or legally required.
+
+TRANSFER OF DATA
+Data may be processed at the company's operating offices and other locations, potentially
+outside the user's jurisdiction. Submitting information represents agreement to that transfer.
+The company states it takes reasonable steps to keep data secure.
+
+DISCLOSURE
+Data may be disclosed in business transactions (merger/acquisition/asset sale), for law
+enforcement, or when legally required or necessary to comply with legal obligations, protect
+the company's rights/property, investigate wrongdoing, protect user/public safety, or protect
+against legal liability.
+
+SECURITY
+The company uses commercially acceptable means to protect data but cannot guarantee absolute
+security (no internet transmission or electronic storage is 100% secure).
+
+CHILDREN'S PRIVACY
+The service does not address anyone under 21 and does not knowingly collect personal data from
+anyone under 21. If such data is discovered, the company takes steps to remove it.
+
+LINKS TO OTHER WEBSITES
+The service may link to third-party sites the company does not control; users should review
+those sites' privacy policies.
+
+CHANGES
+The policy may be updated; changes are posted on the page with an updated "Last updated" date
+and may be communicated via email or a prominent notice.
+
+CONTACT
+Email: support@mrfog.online

@@ -1,0 +1,65 @@
+TITLE: Customer Support - Frequently Asked Questions
+SOURCE_URL: https://www.mrfog.online/pages/customer-support
+CATEGORY: FAQ / support
+LAST_FETCHED: 2026-07-08
+
+=== CUSTOMER SUPPORT FAQ ===
+
+Q1. How can I cancel my order?
+Once an order is submitted and payment is processed, it cannot be canceled after tracking
+information has been generated. To cancel, contact customer support immediately. Allow up to
+24 business hours for the request to be processed.
+
+Q2. How can I track my order?
+After an order ships, the customer receives an email with tracking details. If not received,
+allow 24 business hours before contacting support. Tracking is also available on the
+"My Account" page (order status and tracking number). For delivery updates, use the USPS
+website (https://tools.usps.com/) or contact USPS directly.
+
+Q3. When will I receive my order?
+- Standard carrier: USPS. Standard shipping typically takes 2-7 business days.
+- Free standard shipping on all orders over $69 USD (after discounts).
+- Ships Monday through Friday.
+- Orders placed before 2:00 PM CT (Mon-Thu) may ship the same day.
+- Orders placed after the cutoff ship the next business day.
+- Shipping times depend on product availability; delivery estimates come from the carrier
+  and may be affected by weather, holidays, and destination.
+
+Q4. Do I need to pay any additional fees?
+No fees beyond the order total shown at checkout are charged by MR FOG. However, payments are
+processed through a third-party partner based in Hong Kong, so a customer's bank or card
+issuer may apply a foreign transaction fee (international service / cross-border fee). That
+fee is set and collected solely by the customer's financial institution.
+
+Q5. Can I return my product for a refund?
+Refunds are available only for new and unused devices within 14 business days of delivery
+from mrfog.online. Contact customer support with the order number to begin a return.
+
+Q6. What if I purchased my product from another store?
+Products bought from a retail store follow that retailer's return policy. If the device is
+believed to be defective, contact the store where it was purchased.
+
+Q7. How can I get a wholesale account?
+MR FOG has a wholesale division for retailers and distributors. Fill out the Distributor Form
+on the website; a sales representative will make contact to discuss pricing, shipping, and
+account setup.
+
+Q8. Incomplete or incorrect address submissions
+Customers should double-check the shipping address. Incorrect addresses can delay delivery or
+cause returns. If a package is returned by USPS due to an incorrect address, a refund is
+issued minus the shipping fee.
+
+Q9. Are there any shipping limitations?
+USPS cannot deliver to: government-restricted areas, military bases, and P.O. Boxes.
+
+Q10. Shipping charge estimates
+Shipping charges depend on: 24-hour processing time, package size, destination, special
+instructions, residential vs. business address, and hazardous materials (batteries).
+Shipping charges include insurance; all domestic shipments are insured. MR FOG takes
+responsibility for orders shipped using its shipping accounts. For insurance inquiries,
+contact customer service.
+
+--- Support Hours & Contact ---
+- Email: support@mrfog.online
+- Support hours: Monday to Friday, 9:00 AM to 6:00 PM (EST).
+- Typical response time: 1-2 business days (longer during peak seasons/promotions).

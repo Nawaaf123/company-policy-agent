@@ -1,0 +1,51 @@
+TITLE: MR FOG Online Store - RAG Corpus Index
+SOURCE_SITE: https://www.mrfog.online/
+GENERATED: 2026-07-09
+PURPOSE: Cleaned, chunk-friendly extraction of mrfog.online (site pages + full product
+export) for ingestion into a RAG system. Navigation, JavaScript, and boilerplate stripped.
+Each text file starts with a metadata header (TITLE / SOURCE_URL / CATEGORY / dates) usable
+as chunk metadata.
+
+FILES:
+- 00_index.txt                 -> This manifest.
+- 01_company_overview.txt      -> About Us, brand story, mission, service highlights, socials.
+- 02_shipping.txt              -> Shipping policy, carriers, times, restricted addresses.
+- 03_returns_refunds.txt       -> Return policy, refund process, return shipping costs.
+- 04_customer_support_faq.txt  -> 10-item support FAQ (cancel, track, fees, wholesale, etc.).
+- 05_contact_and_company.txt   -> Contact emails, hours, legal company name & address.
+- 06_terms_and_conditions.txt  -> Full Terms of Use summary incl. transaction & age limits.
+- 07_privacy_policy.txt        -> Data collected, cookies, retention, disclosure, children.
+- 08_disclaimer.txt            -> Legal disclaimers, fair use, health warning.
+- 09_catalog_summary.txt       -> Catalog totals, price range, products per category/collection.
+- 10_products.jsonl            -> STRUCTURED: one JSON object per product (753). Best for
+                                  programmatic ingestion; each line = one chunk + metadata.
+- 11_products_catalog.txt      -> HUMAN-READABLE: one text card per product, grouped by
+                                  category. Best for plain-text chunking.
+
+PRODUCT DATA (10 & 11) — built from the store's product export:
+- 753 products total (672 published, 81 unpublished; "published" flag is in the data).
+- Vendor: MR FOG Online Store. Price range $4.99-$31.99.
+- Fields per product: title, category, collections[], sku, internal_code, price_usd,
+  compare_at_price_usd, published, subtitle, seo_description, description (HTML-stripped),
+  tags[], url, image.
+- EXCLUDED on purpose: inventory quantities (per request) and internal cost-per-item (margin
+  data — kept out of the RAG corpus).
+
+KEY FACTS (quick reference):
+- Store: MR FOG Online Store (mrfog.online), established 2018.
+- Operating company: CFM GROUP (HK) LIMITED, Mong Kok, Hong Kong.
+- Support email: support@mrfog.online | Hours: Mon-Fri 9:00 AM-6:00 PM EST.
+- Shipping: USPS, 2-7 business days, US only (Shipping page); free over $69.
+- Returns: 14 days, unused, original packaging; refund to original payment method.
+- Age requirement: 21+ (19+ in AK/AL/NY; local variations apply).
+- Transaction limits: max 2 successful & 5 failed per 24h; max USD 2,000 per order.
+- Payment: Visa/Mastercard/Discover; processed via a Hong Kong-based partner.
+- Health warning shown site-wide: product may be harmful; not recommended to be used.
+
+INGESTION TIPS:
+- Policy/info files (01-09) are topic-segmented; chunk within each by the "---"/"===" markers.
+- For products, prefer 10_products.jsonl: embed the `description` (or title+seo_description)
+  and keep category/collections/sku/price/url/published as metadata for filtering.
+- Prices are a point-in-time snapshot from the export; re-run the build if you need current
+  prices. The 81 unpublished products are included with published=false so you can filter
+  them out of customer-facing answers if desired.

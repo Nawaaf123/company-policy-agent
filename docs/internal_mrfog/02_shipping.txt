@@ -1,0 +1,33 @@
+TITLE: Shipping Policy
+SOURCE_URL: https://www.mrfog.online/pages/shipping
+CATEGORY: shipping / delivery
+LAST_FETCHED: 2026-07-08
+
+=== SHIPPING POLICY ===
+
+- Carrier: All orders ship via USPS.
+- Delivery time: Allow 2-7 business days for delivery.
+- Coverage: Ships to residential and business addresses in the United States only.
+  (Note: the Terms & Conditions page also references Canada and the USA; the dedicated
+   Shipping page states United States only. Treat the Shipping page as the specific policy.)
+- Free shipping: Free standard shipping on all orders over $69 USD (after discounts).
+
+--- Restricted / Invalid Shipping Addresses ---
+MR FOG does NOT ship to:
+- Military bases
+- P.O. Boxes
+- Government-restricted or high-security areas
+- Any address outside of the United States
+
+Orders placed with an invalid shipping address will be canceled and refunded automatically
+without prior notice.
+
+--- Processing / Ship Times (from Customer Support & Terms) ---
+- Ships Monday through Friday.
+- Orders placed before 2:00 PM CT (Mon-Thu) may ship the same day.
+- Orders placed after the daily cutoff will ship the next business day.
+- Order status is "Processing" for up to 24 hours before it is ready to ship.
+- Friday afternoon and weekend orders are fulfilled starting the next business day.
+- Shipping times are subject to product availability; delivery estimates come from the
+  carrier and may be affected by weather, holidays, and destination.
+- All domestic shipments are insured; shipping charges include insurance.
