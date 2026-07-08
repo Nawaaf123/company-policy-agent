@@ -1,0 +1,1317 @@
+Source URL: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+Page Title: MR FOG SWITCH POD PODS Mint Menthol Ice | 45000 Puff Prefilled Replacement Pod
+Document Type: MR FOG Online Store Page
+
+PAGE CONTENT
+MR FOG SWITCH POD PODS Mint Menthol Ice | 45000 Puff Prefilled Replacement Pod
+class SpzCustomLabelScript extends SPZ.BaseElement {
+constructor(element) {
+super(element);
+isLayoutSupported(layout) {
+return true;
+mountCallback() {
+const script = this.element;
+const boxEl = script.closest('.product_snippet_label_area');
+const labelEl = boxEl.querySelector('.product_snippet__label');
+if(!labelEl) return;
+const observer = new ResizeObserver((entries) => {
+const labelEls = boxEl.querySelectorAll('.product_snippet__label');
+const offsetWidth = Math.max(...Array.from(labelEls).map(el => el.offsetWidth));
+if(offsetWidth>0){
+const padding = offsetWidth / 2 + 8 + 'px';
+boxEl.style.left = padding;
+boxEl.style.right = padding;
+boxEl.style.visibility = 'visible';
+});
+observer.observe(labelEl);
+SPZ.defineElement('spz-custom-label-script', SpzCustomLabelScript);
+(function () {
+class SPZCustomEventTrack extends SPZ.BaseElement {
+this.action_ = SPZServices.actionServiceForDoc(this.element);
+buildCallback() {
+this.setupAction_();
+track(key, value) {
+console.log('tracking...', key, value);
+if(window.sa){
+window.sa.track(key, value);
+}else{
+let sa = null;
+Object.defineProperty(window, 'sa',{
+get: function() {
+return sa;
+},
+set(val){
+sa = val;
+sa.track(key, value);
+})
+setupAction_() {
+const clickParams = {
+business_type: 'product_theme',
+event_name: 'function_click',
+function_name: 'Farida',
+plugin_name: 'Farida',
+template_name: "product",
+template_type: 1,
+module: 'online_store',
+module_type: 'online_store',
+tab_name: '',
+card_name: '',
+event_developer: 'ccbGolumn',
+event_type: 'click',
+};
+this.registerAction('trackClick', (e) => {
+const event_info = e.args || {};
+this.track('function_click', {
+...clickParams,
+event_info: JSON.stringify(event_info),
+this.registerAction('trackExpose', (e) => {
+this.track('function_expose', {
+event_name: 'function_expose',
+event_type: 'expose',
+SPZ.defineElement('spz-custom-event-track', SPZCustomEventTrack);
+}())
+WARNING:This product may be harmful to your health and it is not recommended to be used.
+🔥 New Customers Get 20% OFF — Create Your Account Today
+🎉 Sign Up & Get 20% OFF
+Log in
+Create an account
+Home
+Under $10
+MR FOG PRODUCT
+new
+Disposable & PODS
+0 MG
+AURA 60K
+AURA Splash
+NOVA POPUP
+NOVA MAGIC COTTON
+NOVA BUBBLE GANG
+NOVA BANANA STEEZY
+NOVA APPLE STEEZY
+NOVA LEMON STEEZY
+NOVA MELLOW MAN
+NOVA PEACH STEEZY
+NOVA BERRY STEEZY
+NOVA BLUE RAZZ STEEZY
+NOVA MINT STEEZY
+NOVA ORIGINAL
+SWITCH 15000
+SWITCH 5500
+MAX AIR 8500
+MAX AIR 3000
+MAX PRO 2000
+MAX 1000
+MR FOG PODS
+Vapor Fluid
+BLUE RAZZ STEEZY
+MELLOW MAN
+APPLE STEEZY
+BANANA STEEZY
+BERRY STEEZY
+LEMON STEEZY
+MINT STEEZY
+PEACH STEEZY
+BUBBLE GANG
+MAGIC COTTON
+POP UP
+ORIGINAL
+CLOSED POD SYSTEM
+SWITCH POD KIT
+SWITCH POD KIT SPLASH
+SWITCH POD PODS
+SWITCH POD PODS SPLASH
+SWITCH POD POWER BANK
+Open System
+DRT
+Classic – MR FOG NOVA Mint Steezy 36K Disposable Vape
+$24.99
+Add to cart
+Powered By MR FOG
+DOOZY ICE CUBE
+DOOZY DZ5000
+DOOZY DZ5000 5000 PUFFS Mango Peach Apricot
+$6.99
+More links
+let w = window.innerWidth;
+function setHeaderCssVar() {
+const headerEle = document.getElementById(
+"shoplaza-section-header",
+);
+if (!headerEle) {
+return;
+document.body.style.setProperty(
+"--window-height",
+`${window.innerHeight}px`,
+"--header-height",
+`${headerEle.clientHeight}px`,
+const mdScorllHideEle = headerEle.querySelector(
+".header__mobile .header__scroll_hide",
+if (mdScorllHideEle) {
+"--header-scroll-hide-height-md",
+`${mdScorllHideEle.clientHeight}px`,
+const pcScorllHideEle = headerEle.querySelector(
+".header__desktop .header__scroll_hide",
+if (pcScorllHideEle) {
+"--header-scroll-hide-height-pc",
+`${pcScorllHideEle.clientHeight}px`,
+function handlResize() {
+if (w == window.innerWidth) {
+w = window.innerWidth;
+setHeaderCssVar();
+function init() {
+window.removeEventListener("resize", window._theme_header_listener);
+window._theme_header_listener = handlResize;
+window.addEventListener("resize", window._theme_header_listener);
+init();
+})();
+Mint Menthol Ice – MR FOG Switch Pod Pods 45K Puffs
+1/1
+$19.99
+/**
+* 优惠码组件模型类
+* 处理优惠码的显示和交互逻辑
+*/
+class SpzCustomDiscountCodeModel extends SPZ.BaseElement {
+// 复制按钮和内容的类名
+this.copyBtnClass = "discount_code_btn"
+this.copyClass = "discount_code_value"
+return layout == SPZCore.Layout.LOGIC;
+// 初始化服务
+this.templates_ = SPZServices.templatesForDoc(this.element);
+this.xhr_ = SPZServices.xhrFor(this.win);
+* 渲染优惠码组件
+* @param {Object} data - 渲染数据
+doRender_(data) {
+return this.templates_
+.findAndRenderTemplate(this.element,
+Object.assign(this.getDefaultData(), data)
+.then((el) => {
+this.clearDom();
+this.element.appendChild(el);
+// 绑定复制代码功能
+this.copyCode(el, data);
+* 获取渲染模板
+getRenderTemplate(data) {
+const renderData = Object.assign(this.getDefaultData(), data);
+.findAndRenderTemplate(this.element, renderData)
+return el;
+* 清除DOM内容
+clearDom() {
+const children = this.element.querySelector('*:not(template)');
+children && SPZCore.Dom.removeElement(children);
+* 获取默认数据
+* @returns {Object} 默认数据对象
+getDefaultData() {
+return {
+isMobile: appDiscountUtils.judgeMobile(),
+isRTL: appDiscountUtils.judgeRTL(),
+image_domain: this.win.SHOPLAZZA.image_domain,
+copyBtnClass: this.copyBtnClass,
+copyClass: this.copyClass
+* 复制优惠码功能
+* @param {Element} el - 当前元素
+copyCode(el) {
+const copyBtnList = el.querySelectorAll(`.${this.copyBtnClass}`);
+if (copyBtnList.length > 0) {
+copyBtnList.forEach(item => {
+item.onclick = async () => {
+// 确保获取正确的元素和内容
+const codeElement = item.querySelector(`.${this.copyClass}`);
+if (!codeElement) return;
+// 获取纯文本内容
+const textToCopy = codeElement.innerText.trim();
+// 尝试使用现代API，如果失败则使用备用方案
+try {
+if (navigator.clipboard && navigator.clipboard.writeText) {
+await navigator.clipboard.writeText(textToCopy);
+} else {
+throw new Error('Clipboard API not available');
+// 显示复制成功提示
+this.showCopySuccessToast(textToCopy, el);
+} catch (err) {
+console.error('Modern clipboard API failed, trying fallback...', err);
+// 使用备用复制方案
+this.fallbackCopy(textToCopy, el);
+const discountId = item.dataset["discountId"];
+// 跳转决策: is_redirection + link(可选覆盖)
+const setting = {
+is_redirection: item.dataset["redirection"] === "true",
+link: item.dataset["link"],
+const landingUrl = `/promotions/discount-default/${discountId}`;
+const finalUrl = appDiscountUtils.resolveDiscountHref(setting, landingUrl);
+if (finalUrl && appDiscountUtils.inProductBody(this.element)) {
+this.win.open(finalUrl, '_blank', 'noopener');
+* 使用 execCommand 的复制方案
+* @param {string} codeText - 要复制的文本
+fallbackCopy(codeText, el) {
+const textarea = this.win.document.createElement('textarea');
+textarea.value = codeText;
+// 设置样式使文本框不可见
+textarea.style.position = 'fixed';
+textarea.style.left = '-9999px';
+textarea.style.top = '0';
+// 添加 readonly 属性防止移动端虚拟键盘弹出
+textarea.setAttribute('readonly', 'readonly');
+this.win.document.body.appendChild(textarea);
+textarea.focus();
+textarea.select();
+this.win.document.execCommand('copy');
+this.showCopySuccessToast(codeText, el);
+console.error('Copy failed:', err);
+this.win.document.body.removeChild(textarea);
+* 创建 Toast 元素
+* @returns {Element} 创建的 Toast 元素
+createToastEl_() {
+const toast = document.createElement('ljs-toast');
+toast.setAttribute('layout', 'nodisplay');
+toast.setAttribute('hidden', '');
+toast.setAttribute('id', 'discount-code-toast');
+toast.style.zIndex = '1051';
+return toast;
+* 挂载 Toast 元素到 body
+* @returns {Element} 挂载的 Toast 元素
+mountToastToBody_() {
+const existingToast = this.win.document.getElementById('discount-code-toast');
+if (existingToast) {
+return existingToast;
+const toast = this.createToastEl_();
+this.win.document.body.appendChild(toast);
+* 复制成功的提醒
+showCopySuccessToast(codeText, el) {
+const $toast = this.mountToastToBody_();
+SPZ.whenApiDefined($toast).then(toast => {
+toast.showToast("Discount code copied !");
+this.codeCopyInSessionStorage(codeText);
+* 复制优惠码成功后要存一份到本地存储中，购物车使用
+codeCopyInSessionStorage(codeText) {
+sessionStorage.setItem('other-copied-coupon', codeText);
+} catch (error) {
+console.error(error)
+// 注册自定义元素
+SPZ.defineElement('spz-custom-discount-code-model', SpzCustomDiscountCodeModel);
+* Custom discount code component that handles displaying and managing discount codes
+* @extends {SPZ.BaseElement}
+class SpzCustomDiscountCode extends SPZ.BaseElement {
+// API endpoint for fetching discount codes
+this.getDiscountCodeApi = "\/api\/storefront\/promotion\/code\/list";
+// Debounce timer for resize events
+this.timer = null;
+// Current variant ID
+this.variantId = "4a4a76d0-78e4-4223-b75c-6041771f88ee";
+// Store discount code data
+this.discountCodeData = {}
+* Check if layout is supported
+* @param {string} layout - Layout type
+* @return {boolean}
+* Initialize component after build
+this.templates_ = SPZServices.templatesForDoc();
+this.viewport_ = this.getViewport();
+// Bind methods to maintain context
+this.render = this.render.bind(this);
+this.resize = this.resize.bind(this);
+this.switchVariant = this.switchVariant.bind(this);
+* Setup component when mounted
+this.getData();
+// Add event listeners
+this.viewport_.onResize(this.resize);
+this.win.document.addEventListener('dj.variantChange', this.switchVariant);
+* Cleanup when component is unmounted
+unmountCallback() {
+this.viewport_.removeResize(this.resize);
+this.win.document.removeEventListener('dj.variantChange', this.switchVariant);
+// 清除定时器
+if (this.timer) {
+clearTimeout(this.timer);
+* Handle resize events with debouncing
+resize() {
+clearTimeout(this.timer)
+this.timer = setTimeout(() => {
+if (appDiscountUtils.inProductBody(this.element)) {
+this.render();
+this.renderSkeleton();
+}, 200);
+* Handle variant changes
+* @param {Event} event - Variant change event
+switchVariant(event) {
+const variant = event.detail.selected;
+if (variant.product_id == '1a56d1c9-a93f-47ac-8971-b55d9bc6e651' && variant.id != this.variantId) {
+this.variantId = variant.id;
+* Fetch discount code data from API
+getData() {
+const reqBody = {
+product_id: "1a56d1c9-a93f-47ac-8971-b55d9bc6e651",
+variant_id: this.variantId,
+product_type: "default",
+if (!reqBody.product_id || !reqBody.variant_id) return;
+this.discountCodeData = {};
+this.win.fetch(this.getDiscountCodeApi, {
+method: "POST",
+body: JSON.stringify(reqBody),
+headers: {
+"Content-Type": "application/json"
+}).then(async (response) => {
+if (response.ok) {
+let data = await response.json();
+if (data.list && data.list.length > 0) {
+data.list[0].product_setting.template_config = JSON.parse(data.list[0].product_setting.template_config);
+// Format timestamps to local timezone
+const zone = this.win.SHOPLAZZA.shop.time_zone;
+data.list = data.list.map(item => {
+if(+item.ends_at !== -1) {
+item.ends_at = appDiscountUtils.convertTimestampToFormat(+item.ends_at, zone);
+item.starts_at = appDiscountUtils.convertTimestampToFormat(+item.starts_at, zone);
+return item;
+this.discountCodeData = data;
+}).catch(err => {
+console.error("discount_code", err)
+* Clear component DOM except template
+* Render discount codes with formatted dates
+render() {
+// Render using discount code model
+SPZ.whenApiDefined(document.querySelector('#spz_custom_discount_code_model')).then(renderApi => {
+renderApi.doRender_({
+discountCodeData: this.discountCodeData
+renderSkeleton() {
+// Render template for non-product pages
+this.templates_
+.findAndRenderTemplate(this.element, {
+isMobile: appDiscountUtils.judgeMobile()
+.catch(err => {
+// Register custom element
+SPZ.defineElement('spz-custom-discount-code', SpzCustomDiscountCode);
+SKU :
+MFUSPDSP015014
+Quantity
+Inventory :
+294
+Shipping
+Buy now
+Product was out of stock.
+Product does not exist
+class SpzCustomDiscountFlashsale extends SPZ.BaseElement {
+this.getFlashSaleApi = "\/api\/storefront\/promotion\/flashsale\/display_setting\/product_setting";
+// 促销活动数据
+this.flashsaleData = {}
+return layout == SPZCore.Layout.CONTAINER;
+// 挂载bind函数 解决this指向问题
+// 获取数据
+this.element.onclick = (e) => {
+const cur = this.win.document.querySelector(".app_discount_flashsale_desc");
+const setting = this.flashsaleData.product_setting;
+const landingUrl = `/promotions/discount-default/${this.flashsaleData.discount_info.id}`;
+if (finalUrl && appDiscountUtils.inProductBody(this.element) && e.target !== cur) {
+// 绑定
+// 监听子款式切换，重新渲染
+// 解绑
+}, 200)
+variant_id: this.variantId
+this.flashsaleData = {};
+this.win.fetch(this.getFlashSaleApi, {
+this.flashsaleData = await response.json();
+inProductDetail: appDiscountUtils.inProductBody(this.element),
+flashsaleData: this.flashsaleData,
+SPZ.defineElement('spz-custom-discount-flashsale', SpzCustomDiscountFlashsale);
+The current produc does not participate any Rebate. Switch the participating product to check the design.
+(This prompt will not be displayed on the client-side.)
+Enter your email for exclusive offers, new flavors, and product updates.
+Subscribe
+Please enter a valid email address.
+Please enter your email address.
+Thanks for subscribing
+PRODUCT
+DISPOSABLE & PODS
+VAPOR FLUID
+OPEN SYSTEM
+NEED HELP
+Contact us
+Return Policy
+Customer support
+INFORMATION
+About Us
+Terms & Conditions
+Privacy Policy
+Disclaimer
+Blog
+Service
+Free delivery above $69
+Credit card payment
+Worry free guarantee
+14 day refund guarantee
+Follow us
+E-mail: support@mrfog.online
+Visa
+Mastercard
+Discover
+2026
+MR FOG Online Store All rights reserved.
+(function() {
+const STATUS = {
+LOADING: 'loading',
+FINISH: 'finish'
+const RESULT = {
+EMPTY: 'data-empty'
+class SPZCustomCartSku extends SPZ.BaseElement {
+renderData = [];
+* add to cart reselect item, and delete process:
+* 1. record reselect id before show reselect modal
+* 2. add to cart success, mark `needDeleteReselectRecord` to true
+* 3. close reselect modal / drawer
+* 4. spz-cart re-render, triggered mounted event
+* 5. call refresh
+// mark delete reselect id
+recordReselectId = null;
+// mark should delete reselect record after spz-cart mounted event
+needDeleteReselectRecord = false;
+refreshLock = false;
+addToCartSuccess = false;
+// cache paused refresh data
+refreshDataCache = [];
+// cache similar products data, for manual add to cart
+similarData = [];
+this.registerAction('refresh', (invocation) => {
+const data = invocation && invocation.args && invocation.args.data || {};
+this.refresh(data);
+this.registerAction('deleteReselect', SPZCore.Types.debounce(
+this.win,
+(invocation) => {
+this.deleteReselect(invocation?.args?.id);
+200
+));
+this.registerAction('deleteInvalid', SPZCore.Types.debounce(
+this.deleteInvalid(invocation?.args?.id);
+this.registerAction('setReselectRecordId', (invocation) => {
+this.setReselectRecordId(invocation?.args?.id);
+this.registerAction('clearNeedReselectRecord', (invocation) => {
+this.clearNeedReselectRecord();
+this.registerAction('registerDeleteReselectTask', (invocation) => {
+this.registerDeleteReselectTask(invocation?.args?.data);
+this.registerAction('lockRefresh', (invocation) => {
+this.lockRefresh();
+this.registerAction('releaseRefreshLock', (invocation) => {
+this.releaseRefreshLock();
+this.registerAction('manualAddToCart', (invocation) => {
+this.manualAddToCart(invocation?.args?.id);
+this.registerAction('syncSimilarData', (invocation) => {
+this.syncSimilarData(invocation?.args?.data);
+// DEBUG
+this.registerAction('log', (invocation) => {
+console.log('log', invocation);
+* 数据去重
+* @param {Array} data
+uniq_(data) {
+const result = [];
+for(let i = 0; i < data.length; i++) {
+if(!result.includes(data[i])) {
+result.push(data[i]);
+return result;
+checkRefreshLock() {
+if (this.refreshLock) {
+return false;
+setLoading(isLoading) {
+SPZCore.Dom.toggleAttribute(this.element, STATUS.LOADING, isLoading);
+SPZCore.Dom.toggleAttribute(this.element, STATUS.FINISH, !isLoading);
+setDataResult(data) {
+const isDataEmpty = !data.reselectSkus.length && !data.invalidSkus.length && !data.line_items.length;
+SPZCore.Dom.toggleAttribute(this.element, RESULT.EMPTY, isDataEmpty);
+// 存在多次请求顺序问题
+async refresh(_data) {
+// 接口失败时返回数据不为对象
+if ((typeof _data !== 'object' || !Array.isArray(_data.line_items))) {
+const newData = {
+line_items: [],
+reselectSkus: [],
+invalidSkus: [],
+displayInvalidSkus: []
+this.trigger_('refreshError', newData);
+this.setLoading(false);
+if (!this.checkRefreshLock()) {
+this.setRefreshCache(_data);
+this.setLoading(true);
+let data = _data;
+if (this.needDeleteReselectRecord && this.recordReselectId) {
+let hasError = false;
+data = await this.deleteReselectRecordBeforeRefresh(_data);
+} catch (e) {
+hasError = true;
+console.error(e);
+...data,
+this.setDataResult(newData);
+this.needDeleteReselectRecord = false;
+if (hasError) {
+// 获取失效商品
+const invisibleItems = data.ineffectives;
+// 获取失效商品内仅售罄商品的sku
+const soldOutItems = invisibleItems.filter(item => item.reason === "line_item_sold_out");
+// 通过失效 sku 获取 spu, 注意去重
+const soldOutSpuIds = this.uniq_(soldOutItems.map(item => item.product_id));
+const querySpuIds = soldOutSpuIds.map(spuId => `ids[]=${spuId}`).join('&');
+if (!soldOutSpuIds.length) {
+this.trigger_('refreshSuccess', newData);
+this.renderData = newData;
+// 请求 spu 下其他 sku 库存
+this.xhr_.fetchJson(`/api/product/list?limit=${soldOutSpuIds.length}&${querySpuIds}`)
+.then(res => {
+const reselectSkus = [];
+const invalidSkus = [];
+// spu 维度展示
+const displayInvalidSkus = [];
+res.data.list.forEach(product => {
+// spu 匹配, 存在多 sku 情况
+const soldOutSkus = soldOutItems.filter(item => item.product_id === product.id);
+if (!soldOutSkus.length) {
+// 通过失效 sku 获取 spu 下其他 sku 库存, 存在其他可用库存时标记为 "Reselect" 按钮可用
+//const allowReselect = product.variants
+// .filter(variant => variant.option1 === soldOutProduct.variant.option1 && variant.option2 === soldOutProduct.variant.option2 && variant.option3 === soldOutProduct.variant.option3)
+// .some(variant => variant.available);
+// 查询售罄 sku 对应商品是否可加购, 标记为 Reselect 可用项
+if (product.available) {
+reselectSkus.push(...soldOutSkus);
+// 若商品不可用(全部 sku 售罄), 归纳到失效商品列表
+invalidSkus.push(...soldOutSkus);
+// spu 维度, 仅添加一项 sku
+displayInvalidSkus.push(soldOutSkus[0]);
+reselectSkus,
+invalidSkus,
+displayInvalidSkus
+console.error(err);
+this.trigger_('refreshError', data);
+}).finally(() => {
+async deleteReselect(id, ignoreEmit) {
+if (!id) {
+const targetSku = this.renderData.reselectSkus.find(item => item.id === id);
+const res = await this.xhr_.fetchJson(`/api/cart/${targetSku.variant_id}`, {
+method: 'DELETE',
+body: {
+id: targetSku.id,
+product_id: targetSku.product_id,
+variant_id: targetSku.variant_id,
+...this.renderData,
+reselectSkus: this.renderData.reselectSkus.filter(item => item.id !== id),
+!ignoreEmit && this.trigger_('deleteSuccess', newData);
+!ignoreEmit && this.trigger_('deleteError', err);
+deleteInvalid(id) {
+const targetSku = this.renderData.invalidSkus.find(item => item.id === id);
+this.xhr_.fetchJson(`/api/cart/${targetSku.variant_id}`, {
+invalidSkus: this.renderData.invalidSkus.filter(item => item.id !== id),
+displayInvalidSkus: this.renderData.displayInvalidSkus.filter(item => item.id !== id),
+this.trigger_('deleteSuccess', newData);
+this.trigger_('deleteError', err);
+// record reselect sku id before show reselect modal
+setReselectRecordId(id) {
+this.recordReselectId = id;
+async deleteReselectRecordBeforeRefresh(data) {
+if (!this.recordReselectId) {
+await this.deleteReselect(this.recordReselectId, true);
+ineffectives: data.ineffectives.filter(item => item.id !== this.recordReselectId)
+clearNeedReselectRecord() {
+registerDeleteReselectTask(productData) {
+const targetSku = this.renderData.reselectSkus.find(item => item.id === this.recordReselectId);
+if (targetSku?.variant_id && productData?.variant.id) {
+if (targetSku.variant_id === productData?.variant.id) {
+this.needDeleteReselectRecord = true;
+// pause cart refresh(trigger by similar products)
+lockRefresh() {
+this.refreshLock = true;
+releaseRefreshLock() {
+if (!this.refreshLock) {
+this.refreshLock = false;
+this.refreshWithCache();
+// direct add_to_cart(trigger by similar products)
+async manualAddToCart(id) {
+const target = this.similarData.find(item => item.id === id);
+const res = await this.xhr_.fetchJson(`/api/cart`, {
+method: 'POST',
+note: '',
+product_id: target.id,
+quantity: '1',
+variant_id: target.variants[0].id,
+refer_info: {
+source: 'add_to_cart'
+const newCartItems = res.data.items;
+this.setRefreshCache(newCartItems, true);
+syncSimilarData(data) {
+this.similarData = data.data;
+setRefreshCache(data, patch) {
+if (patch) {
+this.refreshDataCache = {
+...this.refreshDataCache,
+line_items: [...this.refreshDataCache.line_items, ...data]
+this.refreshDataCache = data;
+refreshWithCache() {
+this.refresh(this.refreshDataCache);
+* trigger event
+* @param {Object} data
+trigger_(name, data) {
+const event = SPZUtils.Event.create(this.win, `spz-custom-cart-sku.${name}`, {
+data,
+this.action_.trigger(this.element, name, event);
+SPZ.defineElement('spz-custom-cart-sku', SPZCustomCartSku);
+class SPZCustomCartTrack extends SPZ.BaseElement {
+hash(val) {
+const hashKey = Object.keys(val).sort((a, b) => a - b).reduce((acc, k) => {
+acc += `{'${k}':'${val[k]}'}`;
+return acc;
+}, '');
+return hashKey;
+trackExtra(key, value) {
+console.log('trackExtra...', key, value);
+if (!window.sa) {
+const hashKey = this.hash(value);
+let hasExtraInfo = false;
+if (window.sa.eventInfo && window.sa.eventInfo[key] && window.sa.eventInfo[key].extra_properties) {
+hasExtraInfo = window.sa.eventInfo[key].extra_properties.some(p => {
+return hashKey === this.hash(p);
+if (hasExtraInfo) {
+window.sa && window.sa.registerExtraInfo(key, value);
+delExtraTrack(key, value) {
+window.sa.eventInfo[key].extra_properties = window.sa.eventInfo[key].extra_properties.filter(p => hashKey !== this.hash(p));
+window.sa && window.sa.track(key, value);
+this.registerAction('registerReselectAtc', () => {
+this.trackExtra('add_to_cart', {
+action_type: 'reselect'
+this.registerAction('clearReselectAtc', () => {
+this.delExtraTrack('add_to_cart', {
+this.registerAction('registerSimilarAtc', () => {
+action_type: 'similar_product'
+this.registerAction('clearSimilarAtc', () => {
+business_type: 'product_plugin',
+template_name: 'cart',
+template_type: '13',
+event_developer: 'ccbken',
+this.registerAction('trackDelReselect', () => {
+event_info: JSON.stringify({
+action_type: 'cart_delete',
+element_type: 'sku'
+this.registerAction('trackClickReselect', () => {
+action_type: 'reselect',
+this.registerAction('trackDelSimilar', () => {
+element_type: 'spu'
+this.registerAction('trackClickSimilar', () => {
+this.registerAction('trackOpenSimilar', () => {
+popup_name: 'farida_product_popup'
+SPZ.defineElement('spz-custom-cart-track', SPZCustomCartTrack);
+Free shipping
+Shipping and returns customs and duties tases included
+Fast delivery
+All items are shipped within 3 days
+Account security
+Protect the security of your account and property
+After-sales service
+Product quality issues support returns and exchanges
+Back
+You may also like
+View Cart
+return ``
+}()}
+const TAG = 'spz-custom-add-to-cart';
+class SpzCustomAddToCart extends SPZ.BaseElement {
+this.plugin_timestamp = Date.now();
+this.defaultColorConfig = {
+module_bg: "#FFFFFF",
+button_bg: "#E84926",
+button_color: "#FFFFFF",
+text_color: "#202020",
+price_color: "#E84926",
+border_color: "#E6E6E6",
+border_bg: "#FFFFFF",
+round_size: '4'
+this.config = this.defaultColorConfig;
+this.originStickyTop = 0;
+this.qty = 1;
+this.variantId = this.element.getAttribute('variant-id');
+this.trackMap = {
+qty: this.trackQty.bind(this),
+variant: this.trackVariant.bind(this),
+addToCart: this.trackAddtoCart.bind(this),
+atcView: this.trackAtcView.bind(this),
+this.isHasView = false;
+this.isFirstUpdateVariant=false;
+static deferredMount() {
+this.locale_ = SPZServices.localeFor(this.win);
+this.hasGlobalAtcListener = !!document.querySelector('#add-cart-event-proxy');
+// 初始化
+this.init();
+async init() {
+// 如果不是详情页，不需要执行后面js
+if (window.SHOP_PARAMS.template_type !== '1') return;
+await this.setLocale();
+this.handleIsRender();
+this.bingEvents();
+bingEvents() {
+// 设备切换 重新渲染
+window.addEventListener('resize',
+SPZCore.Types.debounce(
+// 关闭弹窗, 解决切换屏幕尺寸不能滚动的问题
+this.triggerEvent_('closeShopModal');
+this.config = {
+...this.config,
+isMobile: window.innerWidth < 768 ? true : false,
+position: window.innerWidth < 768 ? 'down' : this.config.display_position
+this.renderAddToCart();
+))
+// 获取多语言
+async setLocale() {
+let data;
+//多语言
+data = await this.locale_.i18n(['product', 'products']);
+console.error(error);
+this.i18n = {
+'sold_out': 'Sold out',
+'add_to_cart': 'Add to cart',
+'unavailable': 'Unavailable',
+'product_unavailable': 'Product is unavailable.',
+...data?.product?.product_detail,
+...data?.products?.product,
+getProductData() {
+let pJson = document.querySelector('#product-json');
+if (pJson) {
+return JSON.parse(pJson.innerHTML)?.product;
+} else if (typeof $ === 'function') {
+return $(document).data('djproduct')?.product;
+return undefined;
+getAddCartBtn() {
+return document.querySelector('[data-section-type="product_detail"] [data-click="addToCart"], [data-section-type="product_detail"] [role="addToCart"], [data-section-type="product_detail"] [data-click="buyNow"], [data-section-type="product_detail"] [role="buyNow"], [data-section-type="product"] [data-click="addToCart"], [data-section-type="product"] [role="addToCart"], [data-section-type="product"] [data-click="buyNow"], [data-section-type="product"] [role="buyNow"]');
+handleObserver() {
+if(this.config.trigger_condition == 'theme_hidden') {
+const $addCartBtn = this.getAddCartBtn();
+if($addCartBtn) {
+// 配置了加购/购买按钮; 设置按钮为observer观察目标
+$addCartBtn.setAttribute('id', 'app-atc-need-sticky-buttons')
+findAncestor(node, selector) {
+while (node) {
+if (node.querySelector(selector)) {
+return node;
+node = node.parentElement;
+return null;
+getThemeProductInfoForm() {
+let $themeForm = '';
+const $themeProductInfo = document.querySelector('[data-section-type="product_detail"], [data-section-type="product"]');
+$themeForm = $themeProductInfo?.querySelector('form');
+return $themeForm;
+// 获取主题商品加购数量
+getThemeQuantity() {
+let $themeForm = this.getThemeProductInfoForm();
+if($themeForm) {
+const formData = new FormData($themeForm);
+const quantity = formData.get('quantity');
+return quantity;
+getThemeInitVariantsData() {
+const $themeForm = this.getThemeProductInfoForm();
+// 获取主题初始表单数据
+getThemeProductFormData = () => {
+const form_data = new FormData($themeForm);
+const form_data_format = {}
+for (const [key, value] of form_data) {
+form_data_format[key] = value;
+return form_data_format;
+brightnessByColor(c) {
+let color = '' + c,
+isHEX = c.indexOf('#') == 0,
+isRGB = c.indexOf('rgb') == 0;
+let r, g, b;
+if (isHEX) {
+var m = color.substr(1).match(color.length == 7 ? /(\S{2})/g : /(\S{1})/g);
+if (m) {
+(r = parseInt(m[0], 16)), (g = parseInt(m[1], 16)), (b = parseInt(m[2], 16));
+if (isRGB) {
+const m = color.match(/^rgba\((\d+),\s*(\d+),\s*(\d+),(\d+)\)$/);
+(r = m[1]), (g = m[2]), (b = m[3]);
+if (typeof r != 'undefined') return (r * 299 + g * 587 + b * 114) / 1000;
+getSelectedVariant() {
+const product = this.getProductData();
+return product.variants.find(item => item.id == this.variantId);
+setSelectedOption(product) {
+const selectedVariant = this.getSelectedVariant();
+const productData = Object.assign({}, product);
+// 处理下拉选项
+productData?.options?.forEach(option => {
+option.selectList = [];
+option.values?.forEach(value => {
+let selectStatus = '';
+selectedVariant?.options?.forEach(item => {
+if(item.name == option.name && item.value == value) {
+selectStatus = 'checked';
+option.selectList.push({name: option.name, value: value, checked: selectStatus});
+return productData;
+getSelectedSkuText() {
+const selectVariant = this.getSelectedVariant();
+if(!selectVariant) {
+return '';
+const selectList = selectVariant.options;
+for (var i = 0; i < selectList.length; i++) {
+selectList[i].value = selectVariant[`option${i + 1}`];
+const selectedSkuText = selectList
+.map( item => {
+return item.value;
+.join('/');
+return selectedSkuText;
+// 是否展示 加购弹窗
+getIsButtonClickInfo() {
+const isMultipleProduct = product.available && !product.has_only_default_variant; // 多款式商品
+const isButtonClickInfo = this.config.isMobile && (this.config.style_mobile === "mb_simple" || this.config.style_mobile === "mb_circle") && this.config.button_click_mobile === 'info' && isMultipleProduct;
+return isButtonClickInfo;
+// 是否跟随主题的加购数量 isFollowThemeQty (移动端 simple、circle模版、 PC端 simple模版加购数量从主题获取)
+getIsFollowThemeQty() {
+const followThemeQtyMobile = (this.config.style_mobile === "mb_simple" || this.config.style_mobile === "mb_circle") && this.config.isMobile;
+const followThemeQtyPc = this.config.style === "simple" && !this.config.isMobile;
+const isFollowThemeQty = (followThemeQtyPc || followThemeQtyMobile) ? true : false;
+return isFollowThemeQty;
+getBannerRenderData() {
+// 当前选中变体
+// 变体options下拉列表数据处理
+const productData = this.setSelectedOption(product);
+// 选中的sku文案
+const selectedSkuText = this.getSelectedSkuText();
+const is_button_click_info = this.getIsButtonClickInfo();
+// 主题是否有配置加购/购买按钮
+const isHasAddCartBtn = this.getAddCartBtn() ? true : false;
+// 加购数量是否跟随主题
+const isFollowThemeQty = this.getIsFollowThemeQty();
+// 浅色背景颜色配置
+const brightness = this.brightnessByColor(this.config.module_bg);
+const isDarkBg = brightness < 115;
+const renderData = {
+product: {
+...productData,
+config: {...this.config},
+selectedVariant,
+selectedSkuText,
+config: this.config,
+qty: this.qty,
+variant: selectedVariant,
+is_button_click_info,
+isDarkBg,
+isHasAddCartBtn,
+isFollowThemeQty,
+i18n: this.i18n,
+hasGlobalAtcListener: this.hasGlobalAtcListener
+return renderData;
+// render add_to_cart
+async renderAll() {
+const renderData = this.getBannerRenderData();
+this.triggerEvent_('renderBanner', renderData);
+getConfigData() {
+return fetch(`/api/add-to-cart-config`).then(res => {
+return res.json();
+async getConfig() {
+if(!this.config.hasOwnProperty('open_status')) {
+const res = await this.getConfigData();
+if (res.state === 0 && res.data.open_status) {
+// config数据转化
+this.transConfigData(res.data);
+return this.config;
+transConfigData(data) {
+const resConfig = data;
+...resConfig,
+position: window.innerWidth < 768 ? 'down' : resConfig.display_position
+// 颜色跟随系统时
+if(resConfig.color_setting === 'default' || resConfig.color_setting === 'theme') {
+...this.defaultColorConfig
+// 是否应用到商店
+async handleIsRender() {
+this.handleObserver();
+// 渲染加购内容
+renderAddToCart() {
+if (product.product_type === 'gift_card') return ;
+if (!product.available) return;
+this.renderAll();
+// 选择变体 上报
+trackVariant() {
+window.sa &&
+sa.track('plugin_atc_variant_click', {
+product_id: product.id,
+style: this.config.style,
+style_mobile: this.config.style_mobile
+// 更改数量上报
+trackQty() {
+sa.track('plugin_atc_qty_click', {
+// 加购上报
+trackAddtoCart() {
+let properties = '';
+let source = 'atc';
+if (this.config.button_action === 'checkout') {
+source = 'buy_now';
+const obj = {
+style_mobile: this.config.style_mobile,
+button_action: this.config.button_action,
+plugin_timestamp: this.plugin_timestamp
+const options = {
+quantity: this.qty,
+source,
+variant: this.getSelectedVariant(),
+product: product,
+process: (window.SHOP_PARAMS.product_settings || {}).add_to_cart_process,
+properties: properties
+// 注册曝光参数到add_to_cart事件
+window.spzutm && window.spzutm.registerParams('add_to_cart', { add_to_cart: JSON.stringify(obj) });
+window.sa && sa.track('plugin_atc_button_click', obj);
+this.trackHookAddTocart();
+trackAtcView() {
+const product = this.getProductData()
+if(!this.isHasView) {
+sa.track('plugin_atc_view', {
+this.isHasView = true;
+trackHookAddTocart(options) {
+//FLASH及之后主题trigger事件上报采用HOOK
+window.djInterceptors &&
+window.djInterceptors.track &&
+window.djInterceptors.track.use({
+event: 'dj.addToCart',
+params: {
+id: options.product_id,
+number: options.quantity,
+childrenId: options.variant.id,
+item_price: options.variant.price,
+name: options.product.title,
+type: options.variant.type ? options.variant.type : options.product.type,
+properties: properties,
+quantity: options.quantity,
+variant_id: options.variant.id,
+product_id: options.product_id,
+source: 'atc',
+process: options.process
+once: true
+// 加购弹窗
+renderShopModal_() {
+this.triggerEvent_('showAddToCartModal', renderData);
+showSuccessToast() {
+this.triggerEvent_('showAddToCartToast');
+updateSelectVariant = async(selectedVariant, product) => {
+const configData = await this.getConfig();
+config: configData,
+selectedSkuText
+this.triggerEvent_('variantChange', renderData);
+const renderBannerData = this.getBannerRenderData();
+if(renderBannerData.is_button_click_info && this.config.style_mobile === "mb_circle") {
+this.triggerEvent_('renderBannerClickInfo', renderBannerData);
+getUrlVariantId() {
+const urlParams = new URLSearchParams(window.location.search);
+const variantId = urlParams.get('variant');
+return variantId;
+// 商详页变体切换
+djVariantChange(detail) {
+// 是否为商详页当前商品
+const isDetailProduct = product?.id === detail?.product?.id;
+if(!detail || !isDetailProduct) {
+const selectVariant = detail.selected;
+// 更新变体id
+const variantId = selectVariant.id;
+const oldVariantId = this.variantId;
+if(variantId) {
+this.triggerEvent_('renderSelectedVariant');
+if(oldVariantId !== variantId || !this.isFirstUpdateVariant) {
+this.isFirstUpdateVariant = true;
+this.variantId = variantId;
+this.updateSelectVariant(selectVariant, detail.product);
+} else if(!variantId){
+// 主题未选中变体
+const isDisabledAtc = this.disabledAtc();
+if(isDisabledAtc) {
+this.triggerEvent_('renderBannerNoSelectedVariant', { product: detail.product });
+// 不展示变体的模版
+isHiddenVariantsTemplate() {
+return ((this.config.style_mobile === 'mb_circle' || this.config.style_mobile === 'mb_simple') && this.config.isMobile) || (this.config.style === 'simple' && !this.config.isMobile);
+isUnSelectedThemeVariants() {
+const formData = this.getThemeProductFormData();
+return (formData && formData.hasOwnProperty('variant_id') && (!formData.variant_id || formData.variant_id === 'undefined'));
+// 禁用加购
+disabledAtc() {
+const isHiddenVariantsTemplate = this.isHiddenVariantsTemplate();
+const isUnSelectedThemeVariant = this.isUnSelectedThemeVariants();
+return isHiddenVariantsTemplate && isUnSelectedThemeVariant;
+// 滚动至主题变体处
+scrollToThemeVariant() {
+const themeFormEl = this.getThemeProductInfoForm();
+if(themeFormEl) {
+this.triggerEvent_('showUnSelectedVariantTips');
+setTimeout(() => {
+themeFormEl.scrollIntoView({ behavior: 'smooth' });
+}, 1000);
+async setupAction_() {
+// 上报处理
+this.registerAction('saTrack', async(invocation) => {
+const data = invocation.args;
+// this.trackMap[data.type]?.();
+// 更新variantId
+this.registerAction('updateVriantId', async(invocation) => {
+const data = invocation.args.data;
+if(data.variant_id && data.variant_id != 'undefined') {
+this.variantId = data.variant_id;
+// 渲染弹窗加购&购买按钮
+this.registerAction('renderShopModal', async(invocation) => {
+this.renderShopModal_();
+this.registerAction('bannerExtraRender', async(invocation) => {
+if(renderData.is_button_click_info && this.config.style_mobile === "mb_circle") {
+this.triggerEvent_('renderBannerClickInfo', renderData);
+// 加购数量同步
+this.registerAction('handleAddToCart', async(invocation) => {
+this.scrollToThemeVariant();
+const quantity = this.getThemeQuantity();
+if(this.config.button_action === "checkout" ) {
+this.triggerEvent_('updateQty', { quantity: Number(quantity) || this.qty });
+this.triggerEvent_('handleBuyNow');
+this.triggerEvent_('handleAtc');
+this.registerAction('handleFixedBanner', async(invocation) => {
+// 固定定位时, 触发ljs-sticky 组件showSticky方法,展示banner
+if(this.config.trigger_condition == 'fixed') {
+this.triggerEvent_('showBanner');
+// this.trackAtcView();
+this.registerAction('handleVariantsRender', async(invocation) => {
+this.triggerEvent_('renderBannerNoSelectedVariant', { product: data });
+this.triggerEvent_('renderSelectedVariant', { product: data });
+this.triggerEvent_('variantChange', data);
+this.registerAction('handleShowErrorToast', async(invocation) => {
+if(data?.message) {
+this.triggerEvent_('showAtcErrorToast', data);
+triggerEvent_(name, data) {
+const event = SPZUtils.Event.create(this.win, `${TAG}.${name}`, data || {});
+SPZ.defineElement(TAG, SpzCustomAddToCart)
+Document
+AGE VERIFICATION
+To use the MR FOG Online website, you
+must be aged 21 years or older. Please
+verify your age before entering the site.
+Are you 21 years or older?
+YES (21+)
+NO (Under 21)
+
+EXTRACTED PRODUCT INFORMATION
+Product: MR FOG SWITCH POD PODS Mint Menthol Ice | 45000 Puff Prefilled Replacement Pod
+Category: SWITCH POD
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: MR FOG PRODUCT
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: AURA 60K
+Category: AURA / AURA Splash
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: AURA Splash
+Category: AURA / AURA Splash
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: NOVA POPUP
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: NOVA MAGIC COTTON
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: NOVA BUBBLE GANG
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: NOVA BANANA STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: NOVA APPLE STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: NOVA LEMON STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: NOVA MELLOW MAN
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: NOVA PEACH STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: NOVA BERRY STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: NOVA BLUE RAZZ STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: NOVA MINT STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: NOVA ORIGINAL
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: SWITCH 15000
+Category: SWITCH 15000
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: SWITCH 5500
+Category: SWITCH 5500
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: MAX AIR 8500
+Category: MAX AIR 8500
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: MAX AIR 3000
+Category: MAX AIR 3000
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: MAX PRO 2000
+Category: MAX PRO
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: MR FOG PODS
+Category: Pods / Accessories
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: BLUE RAZZ STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: APPLE STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: BANANA STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: BERRY STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: LEMON STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: MINT STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: PEACH STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: SWITCH POD KIT
+Category: SWITCH POD
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: SWITCH POD KIT SPLASH
+Category: SWITCH POD
+Price: $24.99
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: SWITCH POD PODS
+Category: SWITCH POD
+Price: $24.99
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: SWITCH POD PODS SPLASH
+Category: SWITCH POD
+Price: $24.99
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: SWITCH POD POWER BANK
+Category: SWITCH POD
+Price: $24.99
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: DRT
+Category: DRT Open System
+Price: $24.99
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: Classic – MR FOG NOVA Mint Steezy 36K Disposable Vape
+Category: NOVA
+Price: $24.99
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: Powered By MR FOG
+Category: Other
+Price: $6.99
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: DOOZY ICE CUBE
+Category: Powered By MR FOG / DOOZY
+Price: $6.99
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: DOOZY DZ5000
+Category: Powered By MR FOG / DOOZY
+Price: $6.99
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: DOOZY DZ5000 5000 PUFFS Mango Peach Apricot
+Category: Powered By MR FOG / DOOZY
+Price: $6.99
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: Mint Menthol Ice – MR FOG Switch Pod Pods 45K Puffs
+Category: SWITCH POD
+Price: $19.99
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: this.switchVariant = this.switchVariant.bind(this);
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: this.win.document.addEventListener('dj.variantChange', this.switchVariant);
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: this.win.document.removeEventListener('dj.variantChange', this.switchVariant);
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: switchVariant(event) {
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: The current produc does not participate any Rebate. Switch the participating product to check the design.
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: MR FOG Online Store All rights reserved.
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/
+
+Product: To use the MR FOG Online website, you
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/mr-fog-switch-pod-pods-mint-menthol-ice?cfb=c1241807-03f5-4b46-9813-1647596fa56f&scm=collection.v38.177.202.203.204&score=1.393067837921254&ssp=-/

@@ -1,0 +1,934 @@
+Source URL: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+Page Title: MR FOG Products | MR FOG Online Store - Premium Disposable Vapes, E-Liquids & Nicotine Pouches
+Document Type: MR FOG Online Store Page
+
+PAGE CONTENT
+MR FOG Products | MR FOG Online Store - Premium Disposable Vapes, E-Liquids & Nicotine Pouches
+class SpzCustomLabelScript extends SPZ.BaseElement {
+constructor(element) {
+super(element);
+isLayoutSupported(layout) {
+return true;
+mountCallback() {
+const script = this.element;
+const boxEl = script.closest('.product_snippet_label_area');
+const labelEl = boxEl.querySelector('.product_snippet__label');
+if(!labelEl) return;
+const observer = new ResizeObserver((entries) => {
+const labelEls = boxEl.querySelectorAll('.product_snippet__label');
+const offsetWidth = Math.max(...Array.from(labelEls).map(el => el.offsetWidth));
+if(offsetWidth>0){
+const padding = offsetWidth / 2 + 8 + 'px';
+boxEl.style.left = padding;
+boxEl.style.right = padding;
+boxEl.style.visibility = 'visible';
+});
+observer.observe(labelEl);
+SPZ.defineElement('spz-custom-label-script', SpzCustomLabelScript);
+(function () {
+class SPZCustomEventTrack extends SPZ.BaseElement {
+this.action_ = SPZServices.actionServiceForDoc(this.element);
+buildCallback() {
+this.setupAction_();
+track(key, value) {
+console.log('tracking...', key, value);
+if(window.sa){
+window.sa.track(key, value);
+}else{
+let sa = null;
+Object.defineProperty(window, 'sa',{
+get: function() {
+return sa;
+},
+set(val){
+sa = val;
+sa.track(key, value);
+})
+setupAction_() {
+const clickParams = {
+business_type: 'product_theme',
+event_name: 'function_click',
+function_name: 'Farida',
+plugin_name: 'Farida',
+template_name: "collection",
+template_type: 2,
+module: 'online_store',
+module_type: 'online_store',
+tab_name: '',
+card_name: '',
+event_developer: 'ccbGolumn',
+event_type: 'click',
+};
+this.registerAction('trackClick', (e) => {
+const event_info = e.args || {};
+this.track('function_click', {
+...clickParams,
+event_info: JSON.stringify(event_info),
+this.registerAction('trackExpose', (e) => {
+this.track('function_expose', {
+event_name: 'function_expose',
+event_type: 'expose',
+SPZ.defineElement('spz-custom-event-track', SPZCustomEventTrack);
+}())
+WARNING:This product may be harmful to your health and it is not recommended to be used.
+🔥 New Customers Get 20% OFF — Create Your Account Today
+🎉 Sign Up & Get 20% OFF
+Log in
+Create an account
+Home
+Under $10
+MR FOG PRODUCT
+new
+Disposable & PODS
+0 MG
+AURA 60K
+AURA Splash
+NOVA POPUP
+NOVA MAGIC COTTON
+NOVA BUBBLE GANG
+NOVA BANANA STEEZY
+NOVA APPLE STEEZY
+NOVA LEMON STEEZY
+NOVA MELLOW MAN
+NOVA PEACH STEEZY
+NOVA BERRY STEEZY
+NOVA BLUE RAZZ STEEZY
+NOVA MINT STEEZY
+NOVA ORIGINAL
+SWITCH 15000
+SWITCH 5500
+MAX AIR 8500
+MAX AIR 3000
+MAX PRO 2000
+MAX 1000
+MR FOG PODS
+Vapor Fluid
+BLUE RAZZ STEEZY
+MELLOW MAN
+APPLE STEEZY
+BANANA STEEZY
+BERRY STEEZY
+LEMON STEEZY
+MINT STEEZY
+PEACH STEEZY
+BUBBLE GANG
+MAGIC COTTON
+POP UP
+ORIGINAL
+CLOSED POD SYSTEM
+SWITCH POD KIT
+SWITCH POD KIT SPLASH
+SWITCH POD PODS
+SWITCH POD PODS SPLASH
+SWITCH POD POWER BANK
+Open System
+DRT
+Classic – MR FOG NOVA Mint Steezy 36K Disposable Vape
+$24.99
+Add to cart
+Powered By MR FOG
+DOOZY ICE CUBE
+DOOZY DZ5000
+DOOZY DZ5000 5000 PUFFS Mango Peach Apricot
+$6.99
+More links
+let w = window.innerWidth;
+function setHeaderCssVar() {
+const headerEle = document.getElementById(
+"shoplaza-section-header",
+);
+if (!headerEle) {
+return;
+document.body.style.setProperty(
+"--window-height",
+`${window.innerHeight}px`,
+"--header-height",
+`${headerEle.clientHeight}px`,
+const mdScorllHideEle = headerEle.querySelector(
+".header__mobile .header__scroll_hide",
+if (mdScorllHideEle) {
+"--header-scroll-hide-height-md",
+`${mdScorllHideEle.clientHeight}px`,
+const pcScorllHideEle = headerEle.querySelector(
+".header__desktop .header__scroll_hide",
+if (pcScorllHideEle) {
+"--header-scroll-hide-height-pc",
+`${pcScorllHideEle.clientHeight}px`,
+function handlResize() {
+if (w == window.innerWidth) {
+w = window.innerWidth;
+setHeaderCssVar();
+function init() {
+window.removeEventListener("resize", window._theme_header_listener);
+window._theme_header_listener = handlResize;
+window.addEventListener("resize", window._theme_header_listener);
+init();
+})();
+627
+Products
+All Mr Fog Products
+Filter
+Sort by
+Recommend
+Price, low to high
+Price, high to low
+Newest in
+Highest sales
+Most purchased
+Most viewed
+Clear all
+const ACCORDION_ATTR = 'accordion';
+const EXPANDED_ATTR = 'expanded';
+const HEADER_ATTR = 'custom-accordion-header';
+const CONTENT_ATTR = 'custom-accordion-content';
+class SPZCutomAccordion extends SPZ.BaseElement {
+domEventList = [];
+initExpand = false;
+isAccordion = false;
+this.xhr_ = SPZServices.xhrFor(this.win);
+this.isAccordion = this.element.hasAttribute(ACCORDION_ATTR);
+this.registerAction('update', (invocation) => {
+this.update_();
+this.registerDOMEvents();
+update_() {
+queryHeaderList() {
+return SPZCore.Dom.scopedQuerySelectorAll(
+this.element,
+`[${HEADER_ATTR}]`
+queryContentList() {
+`${CONTENT_ATTR}`
+queryHeaderNextContent(el) {
+let loopTarget = el.nextElementSibling;
+let contentEl = null;
+do {
+if (!loopTarget) {
+break;
+if (loopTarget.hasAttribute(CONTENT_ATTR)) {
+contentEl = loopTarget;
+loopTarget = loopTarget.nextElementSibling;
+} while(loopTarget && contentEl);
+return contentEl;
+updateContentElHeight(el) {
+const isExpanded = el.hasAttribute(EXPANDED_ATTR);
+let height = 0;
+[...el.children].forEach(subEl => {
+if (subEl.offsetHeight) {
+height += subEl.offsetHeight;
+if (isExpanded) {
+el.style.height = height + 'px';
+} else {
+el.style.height = 0;
+headerClickCallback(e) {
+let selfEl = e.target;
+let loopMaxDepth = 20;
+let deep = 1;
+while (!selfEl.hasAttribute(HEADER_ATTR) && deep <= loopMaxDepth) {
+selfEl = selfEl.parentElement;
+++deep;
+if (!selfEl.hasAttribute(HEADER_ATTR)) {
+selfEl.toggleAttribute(EXPANDED_ATTR);
+const contentEl = this.queryHeaderNextContent(selfEl);
+if (contentEl) {
+contentEl.toggleAttribute(EXPANDED_ATTR);
+this.updateContentElHeight(contentEl);
+if (!this.isAccordion) {
+const allContentEl = this.queryContentList();
+allContentEl.forEach(content => {
+if (content === contentEl) {
+content.toggleAttribute(EXPANDED_ATTR, false);
+this.updateContentElHeight(content);
+initDefaultExpand() {
+if (this.initExpand) {
+const headerList = this.queryHeaderList();
+const firstHeader = headerList[0];
+if (!firstHeader) {
+const firstContent = this.queryHeaderNextContent(firstHeader);
+if (!firstContent) {
+firstHeader.toggleAttribute(EXPANDED_ATTR, true);
+firstContent.toggleAttribute(EXPANDED_ATTR, true);
+this.initExpand = true;
+registerDOMEvents() {
+const callback = this.headerClickCallback.bind(this);
+this.queryHeaderList().forEach(dom => {
+// found exist event callback, do not re-bind
+const recordIndex = this.domEventList.findIndex(de => de.el === dom);
+if (recordIndex !== -1) {
+dom.addEventListener('click', callback);
+this.domEventList.push({
+el: dom,
+cb: callback
+SPZ.defineElement('spz-custom-accordion', SPZCutomAccordion);
+})()
+Apply
+const DEFAULT_ATTR = 'default';
+const SELECT_ATTR = 'select';
+const MATCH_QUERY = ['manual', 'published-descending', 'best-selling', 'add_to_cart_count', 'views'];
+class SPZCustomMobileSortEntry extends SPZ.BaseElement {
+templates_ = null;
+templateBuilt = null;
+defaultValue = null;
+selectId = null;
+active = false;
+selectedValue = null;
+updateSelectValue(value) {
+const selectDOM = document.getElementById(this.selectId);
+if (!selectDOM) {
+selectDOM.value = value;
+async updateTemplate(data) {
+const el = await this.templates_.findAndRenderTemplate(this.element, data);
+this.templateBuilt.innerHTML = el.innerHTML;
+return el;
+this.templates_ = SPZServices.templatesForDoc(this.element);
+this.defaultValue = this.element.getAttribute(DEFAULT_ATTR);
+this.selectedValue = this.defaultValue;
+this.selectId = this.element.getAttribute(SELECT_ATTR);
+const urlParams = SPZUtils.Urls.parseQueryString(location.search);
+const urlSortBy = urlParams.sort_by;
+if (urlSortBy) {
+if (MATCH_QUERY.includes(urlSortBy)) {
+this.active = true;
+this.defaultValue = urlSortBy;
+this.selectedValue = urlSortBy;
+this.templates_.findAndRenderTemplate(this.element, {
+active: this.active,
+value: this.defaultValue
+}).then(el => {
+this.element.appendChild(el);
+this.templateBuilt = el;
+this.trigger_('init', this.defaultValue);
+this.update(invocation.args.value);
+this.registerAction('reset', (invocation) => {
+this.reset();
+update(value) {
+this.selectedValue = value;
+this.updateTemplate({
+active: true,
+value
+this.updateSelectValue(value);
+this.trigger_('change', value);
+reset() {
+this.active = false;
+active: false,
+value: this.selectedValue,
+this.trigger_('reset');
+trigger_(name, data) {
+const event = SPZUtils.Event.create(this.win, 'spz-custom-mobile-sort-entry.${name}', {
+data
+this.action_.trigger(this.element, name, event);
+SPZ.defineElement('spz-custom-mobile-sort-entry', SPZCustomMobileSortEntry);
+(function() {
+const SORT_ASC = 'price-ascending';
+const SORT_DESC = 'price-descending';
+const SORT_INIT = null;
+const MATCH_QUERY = [SORT_ASC, SORT_DESC];
+const LOOP_VALUE = [SORT_INIT, SORT_ASC, SORT_DESC];
+class SPZCustomMobilePriceSort extends SPZ.BaseElement {
+sort = SORT_INIT;
+this.templates_ = null;
+this.templateBuilt = null;
+this.selectId = null;
+this.sort = urlSortBy;
+this.templates_.findAndRenderTemplate(this.element, { value: this.sort }).then(el => {
+this.update();
+async updateTemplate(value) {
+const el = await this.templates_.findAndRenderTemplate(this.element, { value });
+toggleSortValue() {
+const currentIndex = LOOP_VALUE.findIndex(lv => lv === this.sort);
+const nextIndex = currentIndex + 1;
+const nextValueIndex = nextIndex % LOOP_VALUE.length;
+return LOOP_VALUE[nextValueIndex];
+update() {
+const nextValue = this.toggleSortValue();
+this.sort = nextValue;
+this.updateTemplate(nextValue).then(el => {
+this.updateSelectValue(nextValue);
+this.trigger_('change', nextValue);
+this.sort = SORT_INIT;
+this.updateTemplate(SORT_INIT).then(el => {
+const event = SPZUtils.Event.create(this.win, 'spz-custom-mobile-price-sort.${name}', {
+SPZ.defineElement('spz-custom-mobile-price-sort', SPZCustomMobilePriceSort);
+Miami – MR FOG NOVA Mint Steezy 36K Disposable Vape
+Menthol – MR FOG NOVA Mint Steezy 36K Disposable Vape
+MR FOG APPLE STEEZY 60ML BLUE RASPBERRY 3MG
+$17.49
+MR FOG APPLE STEEZY 60ML BLUE RASPBERRY 6MG
+MR FOG APPLE STEEZY 30ML BLUE RASPBERRY 50MG
+$14.99
+MR FOG APPLE STEEZY 60ML BLUE RASPBERRY 12MG
+MR FOG APPLE STEEZY 30ML STRAWBERRY 50MG
+MR FOG BANANA STEEZY 60ML BLUE RASPBERRY 6MG
+MR FOG APPLE STEEZY 60ML STRAWBERRY 3MG
+MR FOG APPLE STEEZY 60ML WATERMELON 12MG
+MR FOG APPLE STEEZY 30ML WATERMELON 35MG
+Enter your email for exclusive offers, new flavors, and product updates.
+Subscribe
+Please enter a valid email address.
+Please enter your email address.
+Thanks for subscribing
+PRODUCT
+DISPOSABLE & PODS
+VAPOR FLUID
+OPEN SYSTEM
+NEED HELP
+Contact us
+Shipping
+Return Policy
+Customer support
+INFORMATION
+About Us
+Terms & Conditions
+Privacy Policy
+Disclaimer
+Blog
+Service
+Free delivery above $69
+Credit card payment
+Worry free guarantee
+14 day refund guarantee
+Follow us
+E-mail: support@mrfog.online
+Visa
+Mastercard
+Discover
+2026
+MR FOG Online Store All rights reserved.
+const STATUS = {
+LOADING: 'loading',
+FINISH: 'finish'
+const RESULT = {
+EMPTY: 'data-empty'
+class SPZCustomCartSku extends SPZ.BaseElement {
+renderData = [];
+/**
+* add to cart reselect item, and delete process:
+* 1. record reselect id before show reselect modal
+* 2. add to cart success, mark `needDeleteReselectRecord` to true
+* 3. close reselect modal / drawer
+* 4. spz-cart re-render, triggered mounted event
+* 5. call refresh
+*/
+// mark delete reselect id
+recordReselectId = null;
+// mark should delete reselect record after spz-cart mounted event
+needDeleteReselectRecord = false;
+refreshLock = false;
+addToCartSuccess = false;
+// cache paused refresh data
+refreshDataCache = [];
+// cache similar products data, for manual add to cart
+similarData = [];
+this.registerAction('refresh', (invocation) => {
+const data = invocation && invocation.args && invocation.args.data || {};
+this.refresh(data);
+this.registerAction('deleteReselect', SPZCore.Types.debounce(
+this.win,
+(invocation) => {
+this.deleteReselect(invocation?.args?.id);
+200
+));
+this.registerAction('deleteInvalid', SPZCore.Types.debounce(
+this.deleteInvalid(invocation?.args?.id);
+this.registerAction('setReselectRecordId', (invocation) => {
+this.setReselectRecordId(invocation?.args?.id);
+this.registerAction('clearNeedReselectRecord', (invocation) => {
+this.clearNeedReselectRecord();
+this.registerAction('registerDeleteReselectTask', (invocation) => {
+this.registerDeleteReselectTask(invocation?.args?.data);
+this.registerAction('lockRefresh', (invocation) => {
+this.lockRefresh();
+this.registerAction('releaseRefreshLock', (invocation) => {
+this.releaseRefreshLock();
+this.registerAction('manualAddToCart', (invocation) => {
+this.manualAddToCart(invocation?.args?.id);
+this.registerAction('syncSimilarData', (invocation) => {
+this.syncSimilarData(invocation?.args?.data);
+// DEBUG
+this.registerAction('log', (invocation) => {
+console.log('log', invocation);
+* 数据去重
+* @param {Array} data
+uniq_(data) {
+const result = [];
+for(let i = 0; i < data.length; i++) {
+if(!result.includes(data[i])) {
+result.push(data[i]);
+return result;
+checkRefreshLock() {
+if (this.refreshLock) {
+return false;
+setLoading(isLoading) {
+SPZCore.Dom.toggleAttribute(this.element, STATUS.LOADING, isLoading);
+SPZCore.Dom.toggleAttribute(this.element, STATUS.FINISH, !isLoading);
+setDataResult(data) {
+const isDataEmpty = !data.reselectSkus.length && !data.invalidSkus.length && !data.line_items.length;
+SPZCore.Dom.toggleAttribute(this.element, RESULT.EMPTY, isDataEmpty);
+// 存在多次请求顺序问题
+async refresh(_data) {
+// 接口失败时返回数据不为对象
+if ((typeof _data !== 'object' || !Array.isArray(_data.line_items))) {
+const newData = {
+line_items: [],
+reselectSkus: [],
+invalidSkus: [],
+displayInvalidSkus: []
+this.trigger_('refreshError', newData);
+this.setLoading(false);
+if (!this.checkRefreshLock()) {
+this.setRefreshCache(_data);
+this.setLoading(true);
+let data = _data;
+if (this.needDeleteReselectRecord && this.recordReselectId) {
+let hasError = false;
+try {
+data = await this.deleteReselectRecordBeforeRefresh(_data);
+} catch (e) {
+hasError = true;
+console.error(e);
+...data,
+this.setDataResult(newData);
+this.needDeleteReselectRecord = false;
+if (hasError) {
+// 获取失效商品
+const invisibleItems = data.ineffectives;
+// 获取失效商品内仅售罄商品的sku
+const soldOutItems = invisibleItems.filter(item => item.reason === "line_item_sold_out");
+// 通过失效 sku 获取 spu, 注意去重
+const soldOutSpuIds = this.uniq_(soldOutItems.map(item => item.product_id));
+const querySpuIds = soldOutSpuIds.map(spuId => `ids[]=${spuId}`).join('&');
+if (!soldOutSpuIds.length) {
+this.trigger_('refreshSuccess', newData);
+this.renderData = newData;
+// 请求 spu 下其他 sku 库存
+this.xhr_.fetchJson(`/api/product/list?limit=${soldOutSpuIds.length}&${querySpuIds}`)
+.then(res => {
+const reselectSkus = [];
+const invalidSkus = [];
+// spu 维度展示
+const displayInvalidSkus = [];
+res.data.list.forEach(product => {
+// spu 匹配, 存在多 sku 情况
+const soldOutSkus = soldOutItems.filter(item => item.product_id === product.id);
+if (!soldOutSkus.length) {
+// 通过失效 sku 获取 spu 下其他 sku 库存, 存在其他可用库存时标记为 "Reselect" 按钮可用
+//const allowReselect = product.variants
+// .filter(variant => variant.option1 === soldOutProduct.variant.option1 && variant.option2 === soldOutProduct.variant.option2 && variant.option3 === soldOutProduct.variant.option3)
+// .some(variant => variant.available);
+// 查询售罄 sku 对应商品是否可加购, 标记为 Reselect 可用项
+if (product.available) {
+reselectSkus.push(...soldOutSkus);
+// 若商品不可用(全部 sku 售罄), 归纳到失效商品列表
+invalidSkus.push(...soldOutSkus);
+// spu 维度, 仅添加一项 sku
+displayInvalidSkus.push(soldOutSkus[0]);
+reselectSkus,
+invalidSkus,
+displayInvalidSkus
+.catch(err => {
+console.error(err);
+this.trigger_('refreshError', data);
+}).finally(() => {
+async deleteReselect(id, ignoreEmit) {
+if (!id) {
+const targetSku = this.renderData.reselectSkus.find(item => item.id === id);
+const res = await this.xhr_.fetchJson(`/api/cart/${targetSku.variant_id}`, {
+method: 'DELETE',
+body: {
+id: targetSku.id,
+product_id: targetSku.product_id,
+variant_id: targetSku.variant_id,
+...this.renderData,
+reselectSkus: this.renderData.reselectSkus.filter(item => item.id !== id),
+!ignoreEmit && this.trigger_('deleteSuccess', newData);
+} catch (err) {
+!ignoreEmit && this.trigger_('deleteError', err);
+deleteInvalid(id) {
+const targetSku = this.renderData.invalidSkus.find(item => item.id === id);
+this.xhr_.fetchJson(`/api/cart/${targetSku.variant_id}`, {
+invalidSkus: this.renderData.invalidSkus.filter(item => item.id !== id),
+displayInvalidSkus: this.renderData.displayInvalidSkus.filter(item => item.id !== id),
+this.trigger_('deleteSuccess', newData);
+this.trigger_('deleteError', err);
+// record reselect sku id before show reselect modal
+setReselectRecordId(id) {
+this.recordReselectId = id;
+async deleteReselectRecordBeforeRefresh(data) {
+if (!this.recordReselectId) {
+await this.deleteReselect(this.recordReselectId, true);
+return {
+ineffectives: data.ineffectives.filter(item => item.id !== this.recordReselectId)
+clearNeedReselectRecord() {
+registerDeleteReselectTask(productData) {
+const targetSku = this.renderData.reselectSkus.find(item => item.id === this.recordReselectId);
+if (targetSku?.variant_id && productData?.variant.id) {
+if (targetSku.variant_id === productData?.variant.id) {
+this.needDeleteReselectRecord = true;
+// pause cart refresh(trigger by similar products)
+lockRefresh() {
+this.refreshLock = true;
+releaseRefreshLock() {
+if (!this.refreshLock) {
+this.refreshLock = false;
+this.refreshWithCache();
+// direct add_to_cart(trigger by similar products)
+async manualAddToCart(id) {
+const target = this.similarData.find(item => item.id === id);
+const res = await this.xhr_.fetchJson(`/api/cart`, {
+method: 'POST',
+note: '',
+product_id: target.id,
+quantity: '1',
+variant_id: target.variants[0].id,
+refer_info: {
+source: 'add_to_cart'
+const newCartItems = res.data.items;
+this.setRefreshCache(newCartItems, true);
+syncSimilarData(data) {
+this.similarData = data.data;
+setRefreshCache(data, patch) {
+if (patch) {
+this.refreshDataCache = {
+...this.refreshDataCache,
+line_items: [...this.refreshDataCache.line_items, ...data]
+this.refreshDataCache = data;
+refreshWithCache() {
+this.refresh(this.refreshDataCache);
+unmountCallback() {
+* trigger event
+* @param {Object} data
+const event = SPZUtils.Event.create(this.win, `spz-custom-cart-sku.${name}`, {
+data,
+SPZ.defineElement('spz-custom-cart-sku', SPZCustomCartSku);
+class SPZCustomCartTrack extends SPZ.BaseElement {
+hash(val) {
+const hashKey = Object.keys(val).sort((a, b) => a - b).reduce((acc, k) => {
+acc += `{'${k}':'${val[k]}'}`;
+return acc;
+}, '');
+return hashKey;
+trackExtra(key, value) {
+console.log('trackExtra...', key, value);
+if (!window.sa) {
+const hashKey = this.hash(value);
+let hasExtraInfo = false;
+if (window.sa.eventInfo && window.sa.eventInfo[key] && window.sa.eventInfo[key].extra_properties) {
+hasExtraInfo = window.sa.eventInfo[key].extra_properties.some(p => {
+return hashKey === this.hash(p);
+if (hasExtraInfo) {
+window.sa && window.sa.registerExtraInfo(key, value);
+delExtraTrack(key, value) {
+window.sa.eventInfo[key].extra_properties = window.sa.eventInfo[key].extra_properties.filter(p => hashKey !== this.hash(p));
+window.sa && window.sa.track(key, value);
+this.registerAction('registerReselectAtc', () => {
+this.trackExtra('add_to_cart', {
+action_type: 'reselect'
+this.registerAction('clearReselectAtc', () => {
+this.delExtraTrack('add_to_cart', {
+this.registerAction('registerSimilarAtc', () => {
+action_type: 'similar_product'
+this.registerAction('clearSimilarAtc', () => {
+business_type: 'product_plugin',
+template_name: 'cart',
+template_type: '13',
+event_developer: 'ccbken',
+this.registerAction('trackDelReselect', () => {
+event_info: JSON.stringify({
+action_type: 'cart_delete',
+element_type: 'sku'
+this.registerAction('trackClickReselect', () => {
+action_type: 'reselect',
+this.registerAction('trackDelSimilar', () => {
+element_type: 'spu'
+this.registerAction('trackClickSimilar', () => {
+this.registerAction('trackOpenSimilar', () => {
+popup_name: 'farida_product_popup'
+SPZ.defineElement('spz-custom-cart-track', SPZCustomCartTrack);
+Free shipping
+Shipping and returns customs and duties tases included
+Fast delivery
+All items are shipped within 3 days
+Account security
+Protect the security of your account and property
+After-sales service
+Product quality issues support returns and exchanges
+Back
+You may also like
+View Cart
+Document
+AGE VERIFICATION
+To use the MR FOG Online website, you
+must be aged 21 years or older. Please
+verify your age before entering the site.
+Are you 21 years or older?
+YES (21+)
+NO (Under 21)
+
+EXTRACTED PRODUCT INFORMATION
+Product: MR FOG Products | MR FOG Online Store - Premium Disposable Vapes, E-Liquids & Nicotine Pouches
+Category: E-Liquid / Vapor Fluid
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MR FOG PRODUCT
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: AURA 60K
+Category: AURA / AURA Splash
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: AURA Splash
+Category: AURA / AURA Splash
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: NOVA POPUP
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: NOVA MAGIC COTTON
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: NOVA BUBBLE GANG
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: NOVA BANANA STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: NOVA APPLE STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: NOVA LEMON STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: NOVA MELLOW MAN
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: NOVA PEACH STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: NOVA BERRY STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: NOVA BLUE RAZZ STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: NOVA MINT STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: NOVA ORIGINAL
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: SWITCH 15000
+Category: SWITCH 15000
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: SWITCH 5500
+Category: SWITCH 5500
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MAX AIR 8500
+Category: MAX AIR 8500
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MAX AIR 3000
+Category: MAX AIR 3000
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MAX PRO 2000
+Category: MAX PRO
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MR FOG PODS
+Category: Pods / Accessories
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: BLUE RAZZ STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: APPLE STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: BANANA STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: BERRY STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: LEMON STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MINT STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: PEACH STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: SWITCH POD KIT
+Category: SWITCH POD
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: SWITCH POD KIT SPLASH
+Category: SWITCH POD
+Price: $24.99
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: SWITCH POD PODS
+Category: SWITCH POD
+Price: $24.99
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: SWITCH POD PODS SPLASH
+Category: SWITCH POD
+Price: $24.99
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: SWITCH POD POWER BANK
+Category: SWITCH POD
+Price: $24.99
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: DRT
+Category: DRT Open System
+Price: $24.99
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: Classic – MR FOG NOVA Mint Steezy 36K Disposable Vape
+Category: NOVA
+Price: $24.99
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: Powered By MR FOG
+Category: Other
+Price: $6.99
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: DOOZY ICE CUBE
+Category: Powered By MR FOG / DOOZY
+Price: $6.99
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: DOOZY DZ5000
+Category: Powered By MR FOG / DOOZY
+Price: $6.99
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: DOOZY DZ5000 5000 PUFFS Mango Peach Apricot
+Category: Powered By MR FOG / DOOZY
+Price: $6.99
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: All Mr Fog Products
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: Miami – MR FOG NOVA Mint Steezy 36K Disposable Vape
+Category: NOVA
+Price: $17.49
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: Menthol – MR FOG NOVA Mint Steezy 36K Disposable Vape
+Category: NOVA
+Price: $17.49
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MR FOG APPLE STEEZY 60ML BLUE RASPBERRY 3MG
+Category: E-Liquid / Vapor Fluid
+Price: $17.49
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MR FOG APPLE STEEZY 60ML BLUE RASPBERRY 6MG
+Category: E-Liquid / Vapor Fluid
+Price: $14.99
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MR FOG APPLE STEEZY 30ML BLUE RASPBERRY 50MG
+Category: E-Liquid / Vapor Fluid
+Price: $14.99
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MR FOG APPLE STEEZY 60ML BLUE RASPBERRY 12MG
+Category: E-Liquid / Vapor Fluid
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MR FOG APPLE STEEZY 30ML STRAWBERRY 50MG
+Category: E-Liquid / Vapor Fluid
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MR FOG BANANA STEEZY 60ML BLUE RASPBERRY 6MG
+Category: E-Liquid / Vapor Fluid
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MR FOG APPLE STEEZY 60ML STRAWBERRY 3MG
+Category: E-Liquid / Vapor Fluid
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MR FOG APPLE STEEZY 60ML WATERMELON 12MG
+Category: E-Liquid / Vapor Fluid
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MR FOG APPLE STEEZY 30ML WATERMELON 35MG
+Category: E-Liquid / Vapor Fluid
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: MR FOG Online Store All rights reserved.
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/
+
+Product: To use the MR FOG Online website, you
+Category: Other
+Price: 
+Source: https://www.mrfog.online/products/${product.url}?${toQuery({ aid: 'smart_recommend.'+rule.show_type+'.'+rule.id, ifb: product.ifb || '', cfb: product.cfb || '', scm: product.scm || rule.scm || '', ssp: rule.ssp || '' })}/

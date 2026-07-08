@@ -1,0 +1,1309 @@
+Source URL: https://www.mrfog.online/
+Page Title: MR FOG Official Online Store | Premium Vapes & Accessories
+Document Type: MR FOG Online Store Page
+
+PAGE CONTENT
+MR FOG Official Online Store | Premium Vapes & Accessories
+class SpzCustomLabelScript extends SPZ.BaseElement {
+constructor(element) {
+super(element);
+isLayoutSupported(layout) {
+return true;
+mountCallback() {
+const script = this.element;
+const boxEl = script.closest('.product_snippet_label_area');
+const labelEl = boxEl.querySelector('.product_snippet__label');
+if(!labelEl) return;
+const observer = new ResizeObserver((entries) => {
+const labelEls = boxEl.querySelectorAll('.product_snippet__label');
+const offsetWidth = Math.max(...Array.from(labelEls).map(el => el.offsetWidth));
+if(offsetWidth>0){
+const padding = offsetWidth / 2 + 8 + 'px';
+boxEl.style.left = padding;
+boxEl.style.right = padding;
+boxEl.style.visibility = 'visible';
+});
+observer.observe(labelEl);
+SPZ.defineElement('spz-custom-label-script', SpzCustomLabelScript);
+(function () {
+class SPZCustomEventTrack extends SPZ.BaseElement {
+this.action_ = SPZServices.actionServiceForDoc(this.element);
+buildCallback() {
+this.setupAction_();
+track(key, value) {
+console.log('tracking...', key, value);
+if(window.sa){
+window.sa.track(key, value);
+}else{
+let sa = null;
+Object.defineProperty(window, 'sa',{
+get: function() {
+return sa;
+},
+set(val){
+sa = val;
+sa.track(key, value);
+})
+setupAction_() {
+const clickParams = {
+business_type: 'product_theme',
+event_name: 'function_click',
+function_name: 'Farida',
+plugin_name: 'Farida',
+template_name: "index",
+template_type: 15,
+module: 'online_store',
+module_type: 'online_store',
+tab_name: '',
+card_name: '',
+event_developer: 'ccbGolumn',
+event_type: 'click',
+};
+this.registerAction('trackClick', (e) => {
+const event_info = e.args || {};
+this.track('function_click', {
+...clickParams,
+event_info: JSON.stringify(event_info),
+this.registerAction('trackExpose', (e) => {
+this.track('function_expose', {
+event_name: 'function_expose',
+event_type: 'expose',
+SPZ.defineElement('spz-custom-event-track', SPZCustomEventTrack);
+}())
+WARNING:This product may be harmful to your health and it is not recommended to be used.
+🔥 New Customers Get 20% OFF — Create Your Account Today
+🎉 Sign Up & Get 20% OFF
+Log in
+Create an account
+Home
+Under $10
+MR FOG PRODUCT
+new
+Disposable & PODS
+0 MG
+AURA 60K
+AURA Splash
+NOVA POPUP
+NOVA MAGIC COTTON
+NOVA BUBBLE GANG
+NOVA BANANA STEEZY
+NOVA APPLE STEEZY
+NOVA LEMON STEEZY
+NOVA MELLOW MAN
+NOVA PEACH STEEZY
+NOVA BERRY STEEZY
+NOVA BLUE RAZZ STEEZY
+NOVA MINT STEEZY
+NOVA ORIGINAL
+SWITCH 15000
+SWITCH 5500
+MAX AIR 8500
+MAX AIR 3000
+MAX PRO 2000
+MAX 1000
+MR FOG PODS
+Vapor Fluid
+BLUE RAZZ STEEZY
+MELLOW MAN
+APPLE STEEZY
+BANANA STEEZY
+BERRY STEEZY
+LEMON STEEZY
+MINT STEEZY
+PEACH STEEZY
+BUBBLE GANG
+MAGIC COTTON
+POP UP
+ORIGINAL
+CLOSED POD SYSTEM
+SWITCH POD KIT
+SWITCH POD KIT SPLASH
+SWITCH POD PODS
+SWITCH POD PODS SPLASH
+SWITCH POD POWER BANK
+Open System
+DRT
+Classic – MR FOG NOVA Mint Steezy 36K Disposable Vape
+$24.99
+Add to cart
+Powered By MR FOG
+DOOZY ICE CUBE
+DOOZY DZ5000
+DOOZY DZ5000 5000 PUFFS Mango Peach Apricot
+$6.99
+More links
+let w = window.innerWidth;
+function setHeaderCssVar() {
+const headerEle = document.getElementById(
+"shoplaza-section-header",
+);
+if (!headerEle) {
+return;
+document.body.style.setProperty(
+"--window-height",
+`${window.innerHeight}px`,
+"--header-height",
+`${headerEle.clientHeight}px`,
+const mdScorllHideEle = headerEle.querySelector(
+".header__mobile .header__scroll_hide",
+if (mdScorllHideEle) {
+"--header-scroll-hide-height-md",
+`${mdScorllHideEle.clientHeight}px`,
+const pcScorllHideEle = headerEle.querySelector(
+".header__desktop .header__scroll_hide",
+if (pcScorllHideEle) {
+"--header-scroll-hide-height-pc",
+`${pcScorllHideEle.clientHeight}px`,
+function handlResize() {
+if (w == window.innerWidth) {
+w = window.innerWidth;
+setHeaderCssVar();
+function init() {
+window.removeEventListener("resize", window._theme_header_listener);
+window._theme_header_listener = handlResize;
+window.addEventListener("resize", window._theme_header_listener);
+init();
+})();
+LIMITED STOCK — ORDER NOW TO LOCK IN PRICES!
+FREE SHIPPING FOR ALL ORDER OVER $69
+100% SECURE ONLINE PAYMENT
+Clear Tank · Memory Mode · Replaceable Pod
+SHOP NOW
+Enjoy 60,000 puffs of lasting satisfaction—your smarter choice.
+AURA
+Easy To Vape With Three Modes
+TWO RESISTANCES IN ONE POD
+DRT POD KIT
+Excellent Adaptability,Stunning Smoke,Unique Taste Journey
+NEW STEEZY SERIES
+The activity inventory has been sold out, flash sale discount will not be applied
+Continue Shopping
+class SpzCustomDiscountAtcAction extends SPZ.BaseElement {
+this.xhr_ = SPZServices.xhrFor(this.win);
+this.product_title = "";
+return layout == SPZCore.Layout.LOGIC;
+async getProductTitle_ (data){
+this.product_title = data.product_title;
+handleLoading_ (event) {
+const { type, action } = event;
+const loadingElementId = '#apps-discount-whole-loading';
+const loadingElement = document.querySelector(loadingElementId);
+if (loadingElement) {
+SPZ.whenApiDefined(loadingElement).then((api) => {
+if (action === 'show') {
+api.show_();
+} else {
+api.close_();
+// 渲染加购弹窗内容
+async renderQuickShop_ (data) {
+this.handleLoading_({type: 'whole', action: 'show'});
+const apply_scenario = data.apply_scenario;
+const discount_id = data.discount_id;
+const product_id = data.product_id;
+const limit_purchase = data.limit_purchase;
+this.xhr_.fetchJson(`/api/storefront/promotion/landing_page/product?product_id=${product_id}&discount_id=${discount_id}&apply_scenario=${apply_scenario}`, {
+method: "get",
+}).then(async(res)=>{
+this.handleLoading_({type: 'whole', action: 'close'});
+const $quickShop = await SPZ.whenApiDefined(document.querySelector('#apps-discount-quick-view-render'));
+// 定义默认渲染的子款式
+const selectedVariant = res.product.variants.find((v)=> (v.available && v.is_hit_discount)) || res.product.variants[0];
+let selectedValues = {};
+selectedVariant.options.length && selectedVariant.options.forEach(item => {
+selectedValues[item.name] = item.value;
+// 默认选中的 子款式、 options
+res.product.defaultSelectValues = selectedValues;
+let data = {...res.product, product:res.product, selectedVariant};
+data.need_atc = true;
+data.limit_purchase = limit_purchase;
+$quickShop.render(data);
+// 打开加购弹窗
+SPZ.whenApiDefined(document.querySelector(`#apps-discount-quick-view`)).then((api)=>{
+api.open();
+}).catch((err)=>{
+// 加入购物车
+addToCart_(data) {
+this.xhr_.fetchJson(`/api/storefront/promotion/landing_page/product?product_id=${data.product_id}&discount_id=${discount_id}&apply_scenario=${apply_scenario}`, {
+// 单款式加购
+const variant_id = res.product.variants[0]?.id;
+const $productFormInput = document.querySelector(`#apps-discount-product-form-${data.product_id} input[name='variant_id'`);
+$productFormInput.value = variant_id;
+SPZ.whenApiDefined(document.querySelector(`#apps-discount-product-form-${data.product_id}`)).then((api)=>{
+api.handleAddToCart_();
+}).catch((err)=> {
+// 加购弹窗未参与活动 加购按钮不可点击
+handleNotHitDiscount_(data) {
+const $quickShopBody = document.querySelector('#apps-discount-quick-shop-body');
+const $limitTip = document.querySelector('.apps_discount_limit_purchase_tip');
+//当前子框式未命中活动
+if(data.variant.is_hit_discount == false) {
+$quickShopBody.setAttribute('variantstatus', 'notHitDiscount');
+$limitTip && $limitTip.setAttribute('selectedvariantstatus', 'notHitDiscount');
+$quickShopBody.setAttribute('variantstatus', '');
+$limitTip && $limitTip.setAttribute('selectedvariantstatus', '')
+this.registerAction('renderQuickShop', (invocation) => {
+const data = invocation.args;
+this.renderQuickShop_(data);
+// 加购
+this.registerAction('addToCart', (invocation) => {
+this.addToCart_(data);
+// 子款式 未参与活动
+this.registerAction('handleNotHitDiscount', (invocation) => {
+const data = invocation.args.data;
+this.handleNotHitDiscount_(data);
+this.registerAction('getCartCount', (invocation) => {
+//一些老主题还未用spz重构,需要手动触发一次老方法以更新购物车图标的数量
+window.$ && $(document).trigger('dj.common.cart.change');
+this.registerAction('getProductTitle', (invocation) => {
+this.getProductTitle_(data);
+this.registerAction('handleButton', (invocation) => {
+window.location.href = this.product_title;
+SPZ.defineElement('spz-custom-discount-atc-action', SpzCustomDiscountAtcAction);
+class SpzCustomDiscountBundle extends SPZ.BaseElement {
+mountCallback() {}
+unmountCallback() {}
+this.registerAction('showAddToCartToast', () => {
+const themeAddToCartToastEl = document.querySelector('#add-cart-event-proxy')
+if(themeAddToCartToastEl) return
+const toastEl = document.querySelector('#apps-match-drawer-add_to_cart_toast')
+SPZ.whenApiDefined(toastEl).then((apis) => {
+apis.showToast("Added successfully");
+SPZ.defineElement('spz-custom-discount-toast', SpzCustomDiscountBundle);
+class SpzCustomDiscountFlashsale extends SPZ.BaseElement {
+this.discountInfoApi = "\/api\/storefront\/promotion\/home_page\/campaign?discount_id="
+this.product_display = {};
+this.model = {
+loading: false,
+page: 2,
+limit: 20,
+total: 0, //已展示的商品数量
+params: {
+count: 0,
+has_more: false,
+sort: {
+by: "recommend",
+direction: "asc"
+this.discount_id= "";
+this.image_size="100%";
+this.discount_info = {};
+async getDiscountList() {
+const data = await this.xhr_.fetchJson(this.discountInfoApi + this.discount_id, {
+method: "GET",
+}).then(res => {
+this.model.params = {
+count: res.product_info.count,
+has_more: res.product_info.has_more,
+if(!res.product_info.product.length) return;
+this.model.total = res.product_info.product.length;
+this.product_display = res.home_page_info.product_display;
+this.discount_info = res.discount_info;
+res.product_info.product.forEach((product) => {
+product.url = appDiscountUtils.globalizePath(product.url);
+SPZ.whenApiDefined(document.getElementById("appDiscountIndexFlashsale"))
+.then(apis => {
+apis.render(res).then(() => {
+const hiddenArraw = res.home_page_info.banner.enabled ? res.product_info.product.length < 5 : res.product_info.product.length < 6
+if(hiddenArraw) {
+document.querySelectorAll('.app_discount_flashsale_arrow').forEach((item) => {
+item.style.display="none";
+SPZ.whenApiDefined(document.getElementById("flashsaleProductsRender")).then((api) => {
+res.product_info.product_display = this.product_display;
+res.product_info.discount_id = this.discount_id;
+res.product_info.apply_scenario = 1;
+res.product_info.limit_purchase = this.discount_info.limit_user_product_discount;
+res.product_info.discount_image_size = this.image_size;
+api.render(res.product_info,true).then(() => {this.bindEvent_()});
+}).catch(err => {
+console.error(err);
+return data;
+// 获取加载的商品数据，拼接html模板
+async loadData(cb) {
+// 请求数据
+this.model.loading = true;
+//查询活动商品接口
+const reqBody = {
+discount_id: this.discount_id,
+page: this.model.page,
+limit: this.model.limit,
+apply_scenario: 1,
+sort: this.model.params.sort,
+sales_channel: {
+sale_channel_type: "online",
+sale_channel_id: '1977050'
+this.xhr_.fetchJson(`/api/storefront/promotion/landing_page/product/list`, {
+method: "post",
+body: reqBody
+const count = res.count;
+this.model.params.has_more = res.has_more;
+this.model.total = this.model.total + res.products.length;
+if (count > 0) {
+this.model.page++;
+if (res.products && res.products.length > 0) {
+res.products.forEach((product) => {
+res.product_display = this.product_display;
+res.discount_id = this.discount_id;
+res.apply_scenario = 1;
+res.limit_purchase = this.discount_info.limit_user_product_discount;
+res.discount_image_size = this.image_size;
+// 获取商品列表渲染模板, dom挂载
+const $content = document.querySelector(".app_discount_products_list_wrapper");
+this.templates_ = SPZServices.templatesForDoc();
+this.templates_.renderTemplate(document.querySelector('#apps-discounts_product_list_template'), res).then((el) => {
+const childNodes = el.querySelectorAll('.as-render-product-item');
+if (childNodes && childNodes.length > 0) {
+$content.append(...childNodes);
+// 监听load去掉灰色背景
+document.dispatchEvent(new CustomEvent('fire.load.img'));
+// 触发懒加载
+cb && cb(products);
+window.lazyLoadInstance && window.lazyLoadInstance.update();
+this.model.loading = false;
+this.registerAction('shiftMove', (data) => {
+const $el = document.querySelector(".app_discount_products_list_wrapper");
+const action = data.args.direct === "right";
+const scrollwidth = action ? $el.offsetWidth : -$el.offsetWidth;
+$el.scrollBy({
+left: scrollwidth,
+behavior: 'smooth'
+this.registerAction('changeFlashSaleLimitPurchase', (invocation) => {
+this.handleFlashsaleTip_(data);
+//切换快速加购弹窗内限时促销限购提示
+handleFlashsaleTip_(data) {
+const flashsaleEl = document.querySelector('#quick-shop-flashsale-tip');
+SPZ.whenApiDefined(flashsaleEl).then((api) => {
+api.render(data);
+bindEvent_() {
+// 监听滚动，请求数据
+if($el) {
+$el.addEventListener("scroll", this.win.SPZCore.Types.debounce(
+this.win,
+() => {
+const isRightEnd = $el.scrollLeft + $el.offsetWidth + 10 >= $el.scrollWidth;
+const isLeftEnd = Math.abs($el.scrollLeft) + $el.offsetWidth + 10 >= $el.scrollWidth;
+const isRTL = document.documentElement.getAttribute('dir') == 'rtl';
+const isEnd = isRTL ? isLeftEnd : isRightEnd;
+if(isEnd && this.model.params.has_more && !this.model.loading && this.model.total < 100) {
+this.loadData();
+50
+))
+const $el = document.querySelector("#appDiscountFlashsale")
+this.discount_id = $el.getAttribute('flashsale-id');
+this.image_size = $el.getAttribute('image-size');
+if(!this.discount_id) return;
+this.getDiscountList();
+SPZ.defineElement('spz-custom-discount-flashsale', SpzCustomDiscountFlashsale);
+PROMOTION
+Spend More, Save More
+— Now Live
+Limited time · While supplies last
+Free shipping
+Over $69
+US Warehouse
+5-7 Days Delivery
+100% Secure
+Payment Methods
+Authentic Sale
+100% Genuine
+POPULAR CATEGORIES
+DISPOSABLE
+VAPOR FLUID
+OPEN SYSTEM
+Save
+$5.00
+DOOZY ICE CUBE Blueberry Ice
+$19.99
+DOOZY DZ5000 5000 PUFFS Rainbow Candy
+$4.51
+Banana Strawberry Kiwi - MR FOG Max Air 3000 Puffs Disposable Vape
+$9.99
+$14.50
+$11.00
+Double Apple - MR FOG Max Air 8500 Puffs Disposable Vape
+$20.99
+$5.51
+Strawberry Guava - MR FOG Max Pro 2000 Puffs Disposable Vape
+$7.99
+$13.50
+Blackberry – MR FOG NOVA Blue Razz Steezy 36K Disposable Vape
+Menthol – MR FOG NOVA Mint Steezy 36K Disposable Vape
+Cherry Watermelon Ice – MR FOG NOVA 36K Disposable Vape
+$12.00
+Gold Edition (0mg) – MR FOG Switch 15000 Puffs Disposable Vape
+$15.99
+$27.99
+$4.01
+Grape Blue Raspberry Lemon Ice - MR FOG Max 1000 Puffs Disposable Vape
+View more
+MR FOG BERRY STEEZY 30ML BLUE RASPBERRY 35MG
+$14.99
+$1.50
+MR FOG BLUE RAZZ STEEZY 30ML STRAWBERRY 35MG
+$13.49
+MR FOG APPLE STEEZY 60ML BLUE RASPBERRY 3MG
+$17.49
+MR FOG BLUE RAZZ STEEZY 30ML GRAPE 35MG
+MR FOG BLUE RAZZ STEEZY 30ML RASPBERRY 50MG
+MR FOG APPLE STEEZY 30ML WATERMELON 35MG
+MR FOG MELLOW MAN 30ML STRAWBERRY 50MG
+MR FOG BLUE RAZZ STEEZY 30ML WATERMELON 35MG
+$1.75
+MR FOG BLUE RAZZ STEEZY 60ML WATERMELON 3MG
+$15.74
+MR FOG BLUE RAZZ STEEZY 30ML WATERMELON 50MG
+California Cherry – MR FOG Switch Pod Kit 45K Puffs
+Grape Popup – MR FOG Switch Pod Kit 45K Puffs
+Blue Razz Blow Pop – MR FOG Switch Pod Kit 45K Puffs
+Blue Raspberry Cherry Ice – MR FOG Switch Pod Kit 45K Puffs
+Watermelon Bubble Gang – MR FOG Switch Pod Kit 45K Puffs
+Strawberry Bubble Gang – MR FOG Switch Pod Kit 45K Puffs
+Peach Watermelon – MR FOG Switch Pod Kit 45K Puffs
+Peach Berry – MR FOG Switch Pod Kit 45K Puffs
+Virginia Classic – MR FOG Switch Pod Kit 45K Puffs
+Mint Menthol Ice – MR FOG Switch Pod Kit 45K Puffs
+MR FOG DRT POD KIT RED CARBON
+$22.99
+MR FOG DRT POD KIT PURPLE CARBON
+MR FOG DRT POD KIT PINK CARBON
+MR FOG DRT POD KIT GREY CARBON
+MR FOG DRT POD KIT GOLD CARBON
+MR FOG DRT POD KIT BLUE CARBON
+MR FOG DRT DUAL RESISTANCE REFILLABLE POD 0.6/1.2Ω (2 PCS)
+$7.49
+MR FOG DRT Dual Resistance Refillable Pod 0.4/0.8Ω (2 PCS)
+MR FOG 5-in-1 CHARGER CABLE
+NEW ARRIVALS
+Grape – MR FOG AURA Splash 60K Disposable Vape
+$26.99
+Blue Raspberry – MR FOG AURA Splash 60K Disposable Vape
+Sour Shock Blue Raspberry – MR FOG AURA 60K Disposable Vape
+Sour Watermelon – MR FOG AURA Splash 60K Disposable Vape
+Exotic Berry Fusion – MR FOG AURA 60K Disposable Vape
+Fantastic Orange – MR FOG AURA Splash 60K Disposable Vape
+Peach Apricot – MR FOG AURA 60K Disposable Vape
+Mellow Man – MR FOG AURA Splash 60K Disposable Vape
+BEST SELLER
+POPULAR PRODUCTS
+Sour Apple Ice – MR FOG NOVA 36K Disposable Vape
+Blueberry On Ice - MR FOG Max 1000 Puffs Disposable Vape
+MR FOG PODS PACK OF 4 Pink Lemonade
+$13.99
+MR FOG PODS PACK OF 4 Magic Cotton
+MR FOG PODS PACK OF 4 Blueberry Cherry
+Grape - MR FOG Max 1000 Puffs Disposable Vape
+Baccy - MR FOG Max Air 3000 Puffs Disposable Vape
+Blue Rancher Ice – MR FOG NOVA Blue Razz Steezy 36K Disposable Vape
+BLOG POSTS
+View all
+Customer Reviews
+No reviews yet, why don't you leave the first review?
+Write a Review
+Enter your email for exclusive offers, new flavors, and product updates.
+Subscribe
+Please enter a valid email address.
+Please enter your email address.
+Thanks for subscribing
+PRODUCT
+DISPOSABLE & PODS
+NEED HELP
+Contact us
+Shipping
+Return Policy
+Customer support
+INFORMATION
+About Us
+Terms & Conditions
+Privacy Policy
+Disclaimer
+Blog
+Service
+Free delivery above $69
+Credit card payment
+Worry free guarantee
+14 day refund guarantee
+Follow us
+E-mail: support@mrfog.online
+Visa
+Mastercard
+Discover
+2026
+MR FOG Online Store All rights reserved.
+(function() {
+const STATUS = {
+LOADING: 'loading',
+FINISH: 'finish'
+const RESULT = {
+EMPTY: 'data-empty'
+class SPZCustomCartSku extends SPZ.BaseElement {
+renderData = [];
+/**
+* add to cart reselect item, and delete process:
+* 1. record reselect id before show reselect modal
+* 2. add to cart success, mark `needDeleteReselectRecord` to true
+* 3. close reselect modal / drawer
+* 4. spz-cart re-render, triggered mounted event
+* 5. call refresh
+*/
+// mark delete reselect id
+recordReselectId = null;
+// mark should delete reselect record after spz-cart mounted event
+needDeleteReselectRecord = false;
+refreshLock = false;
+addToCartSuccess = false;
+// cache paused refresh data
+refreshDataCache = [];
+// cache similar products data, for manual add to cart
+similarData = [];
+this.registerAction('refresh', (invocation) => {
+const data = invocation && invocation.args && invocation.args.data || {};
+this.refresh(data);
+this.registerAction('deleteReselect', SPZCore.Types.debounce(
+(invocation) => {
+this.deleteReselect(invocation?.args?.id);
+200
+));
+this.registerAction('deleteInvalid', SPZCore.Types.debounce(
+this.deleteInvalid(invocation?.args?.id);
+this.registerAction('setReselectRecordId', (invocation) => {
+this.setReselectRecordId(invocation?.args?.id);
+this.registerAction('clearNeedReselectRecord', (invocation) => {
+this.clearNeedReselectRecord();
+this.registerAction('registerDeleteReselectTask', (invocation) => {
+this.registerDeleteReselectTask(invocation?.args?.data);
+this.registerAction('lockRefresh', (invocation) => {
+this.lockRefresh();
+this.registerAction('releaseRefreshLock', (invocation) => {
+this.releaseRefreshLock();
+this.registerAction('manualAddToCart', (invocation) => {
+this.manualAddToCart(invocation?.args?.id);
+this.registerAction('syncSimilarData', (invocation) => {
+this.syncSimilarData(invocation?.args?.data);
+// DEBUG
+this.registerAction('log', (invocation) => {
+console.log('log', invocation);
+* 数据去重
+* @param {Array} data
+uniq_(data) {
+const result = [];
+for(let i = 0; i < data.length; i++) {
+if(!result.includes(data[i])) {
+result.push(data[i]);
+return result;
+checkRefreshLock() {
+if (this.refreshLock) {
+return false;
+setLoading(isLoading) {
+SPZCore.Dom.toggleAttribute(this.element, STATUS.LOADING, isLoading);
+SPZCore.Dom.toggleAttribute(this.element, STATUS.FINISH, !isLoading);
+setDataResult(data) {
+const isDataEmpty = !data.reselectSkus.length && !data.invalidSkus.length && !data.line_items.length;
+SPZCore.Dom.toggleAttribute(this.element, RESULT.EMPTY, isDataEmpty);
+// 存在多次请求顺序问题
+async refresh(_data) {
+// 接口失败时返回数据不为对象
+if ((typeof _data !== 'object' || !Array.isArray(_data.line_items))) {
+const newData = {
+line_items: [],
+reselectSkus: [],
+invalidSkus: [],
+displayInvalidSkus: []
+this.trigger_('refreshError', newData);
+this.setLoading(false);
+if (!this.checkRefreshLock()) {
+this.setRefreshCache(_data);
+this.setLoading(true);
+let data = _data;
+if (this.needDeleteReselectRecord && this.recordReselectId) {
+let hasError = false;
+try {
+data = await this.deleteReselectRecordBeforeRefresh(_data);
+} catch (e) {
+hasError = true;
+console.error(e);
+...data,
+this.setDataResult(newData);
+this.needDeleteReselectRecord = false;
+if (hasError) {
+// 获取失效商品
+const invisibleItems = data.ineffectives;
+// 获取失效商品内仅售罄商品的sku
+const soldOutItems = invisibleItems.filter(item => item.reason === "line_item_sold_out");
+// 通过失效 sku 获取 spu, 注意去重
+const soldOutSpuIds = this.uniq_(soldOutItems.map(item => item.product_id));
+const querySpuIds = soldOutSpuIds.map(spuId => `ids[]=${spuId}`).join('&');
+if (!soldOutSpuIds.length) {
+this.trigger_('refreshSuccess', newData);
+this.renderData = newData;
+// 请求 spu 下其他 sku 库存
+this.xhr_.fetchJson(`/api/product/list?limit=${soldOutSpuIds.length}&${querySpuIds}`)
+.then(res => {
+const reselectSkus = [];
+const invalidSkus = [];
+// spu 维度展示
+const displayInvalidSkus = [];
+res.data.list.forEach(product => {
+// spu 匹配, 存在多 sku 情况
+const soldOutSkus = soldOutItems.filter(item => item.product_id === product.id);
+if (!soldOutSkus.length) {
+// 通过失效 sku 获取 spu 下其他 sku 库存, 存在其他可用库存时标记为 "Reselect" 按钮可用
+//const allowReselect = product.variants
+// .filter(variant => variant.option1 === soldOutProduct.variant.option1 && variant.option2 === soldOutProduct.variant.option2 && variant.option3 === soldOutProduct.variant.option3)
+// .some(variant => variant.available);
+// 查询售罄 sku 对应商品是否可加购, 标记为 Reselect 可用项
+if (product.available) {
+reselectSkus.push(...soldOutSkus);
+// 若商品不可用(全部 sku 售罄), 归纳到失效商品列表
+invalidSkus.push(...soldOutSkus);
+// spu 维度, 仅添加一项 sku
+displayInvalidSkus.push(soldOutSkus[0]);
+reselectSkus,
+invalidSkus,
+displayInvalidSkus
+.catch(err => {
+this.trigger_('refreshError', data);
+}).finally(() => {
+async deleteReselect(id, ignoreEmit) {
+if (!id) {
+const targetSku = this.renderData.reselectSkus.find(item => item.id === id);
+const res = await this.xhr_.fetchJson(`/api/cart/${targetSku.variant_id}`, {
+method: 'DELETE',
+body: {
+id: targetSku.id,
+product_id: targetSku.product_id,
+variant_id: targetSku.variant_id,
+...this.renderData,
+reselectSkus: this.renderData.reselectSkus.filter(item => item.id !== id),
+!ignoreEmit && this.trigger_('deleteSuccess', newData);
+} catch (err) {
+!ignoreEmit && this.trigger_('deleteError', err);
+deleteInvalid(id) {
+const targetSku = this.renderData.invalidSkus.find(item => item.id === id);
+this.xhr_.fetchJson(`/api/cart/${targetSku.variant_id}`, {
+invalidSkus: this.renderData.invalidSkus.filter(item => item.id !== id),
+displayInvalidSkus: this.renderData.displayInvalidSkus.filter(item => item.id !== id),
+this.trigger_('deleteSuccess', newData);
+this.trigger_('deleteError', err);
+// record reselect sku id before show reselect modal
+setReselectRecordId(id) {
+this.recordReselectId = id;
+async deleteReselectRecordBeforeRefresh(data) {
+if (!this.recordReselectId) {
+await this.deleteReselect(this.recordReselectId, true);
+return {
+ineffectives: data.ineffectives.filter(item => item.id !== this.recordReselectId)
+clearNeedReselectRecord() {
+registerDeleteReselectTask(productData) {
+const targetSku = this.renderData.reselectSkus.find(item => item.id === this.recordReselectId);
+if (targetSku?.variant_id && productData?.variant.id) {
+if (targetSku.variant_id === productData?.variant.id) {
+this.needDeleteReselectRecord = true;
+// pause cart refresh(trigger by similar products)
+lockRefresh() {
+this.refreshLock = true;
+releaseRefreshLock() {
+if (!this.refreshLock) {
+this.refreshLock = false;
+this.refreshWithCache();
+// direct add_to_cart(trigger by similar products)
+async manualAddToCart(id) {
+const target = this.similarData.find(item => item.id === id);
+const res = await this.xhr_.fetchJson(`/api/cart`, {
+method: 'POST',
+note: '',
+product_id: target.id,
+quantity: '1',
+variant_id: target.variants[0].id,
+refer_info: {
+source: 'add_to_cart'
+const newCartItems = res.data.items;
+this.setRefreshCache(newCartItems, true);
+syncSimilarData(data) {
+this.similarData = data.data;
+setRefreshCache(data, patch) {
+if (patch) {
+this.refreshDataCache = {
+...this.refreshDataCache,
+line_items: [...this.refreshDataCache.line_items, ...data]
+this.refreshDataCache = data;
+refreshWithCache() {
+this.refresh(this.refreshDataCache);
+unmountCallback() {
+* trigger event
+* @param {Object} data
+trigger_(name, data) {
+const event = SPZUtils.Event.create(this.win, `spz-custom-cart-sku.${name}`, {
+data,
+this.action_.trigger(this.element, name, event);
+SPZ.defineElement('spz-custom-cart-sku', SPZCustomCartSku);
+class SPZCustomCartTrack extends SPZ.BaseElement {
+hash(val) {
+const hashKey = Object.keys(val).sort((a, b) => a - b).reduce((acc, k) => {
+acc += `{'${k}':'${val[k]}'}`;
+return acc;
+}, '');
+return hashKey;
+trackExtra(key, value) {
+console.log('trackExtra...', key, value);
+if (!window.sa) {
+const hashKey = this.hash(value);
+let hasExtraInfo = false;
+if (window.sa.eventInfo && window.sa.eventInfo[key] && window.sa.eventInfo[key].extra_properties) {
+hasExtraInfo = window.sa.eventInfo[key].extra_properties.some(p => {
+return hashKey === this.hash(p);
+if (hasExtraInfo) {
+window.sa && window.sa.registerExtraInfo(key, value);
+delExtraTrack(key, value) {
+window.sa.eventInfo[key].extra_properties = window.sa.eventInfo[key].extra_properties.filter(p => hashKey !== this.hash(p));
+window.sa && window.sa.track(key, value);
+this.registerAction('registerReselectAtc', () => {
+this.trackExtra('add_to_cart', {
+action_type: 'reselect'
+this.registerAction('clearReselectAtc', () => {
+this.delExtraTrack('add_to_cart', {
+this.registerAction('registerSimilarAtc', () => {
+action_type: 'similar_product'
+this.registerAction('clearSimilarAtc', () => {
+business_type: 'product_plugin',
+template_name: 'cart',
+template_type: '13',
+event_developer: 'ccbken',
+this.registerAction('trackDelReselect', () => {
+event_info: JSON.stringify({
+action_type: 'cart_delete',
+element_type: 'sku'
+this.registerAction('trackClickReselect', () => {
+action_type: 'reselect',
+this.registerAction('trackDelSimilar', () => {
+element_type: 'spu'
+this.registerAction('trackClickSimilar', () => {
+this.registerAction('trackOpenSimilar', () => {
+popup_name: 'farida_product_popup'
+SPZ.defineElement('spz-custom-cart-track', SPZCustomCartTrack);
+Shipping and returns customs and duties tases included
+Fast delivery
+All items are shipped within 3 days
+Account security
+Protect the security of your account and property
+After-sales service
+Product quality issues support returns and exchanges
+Back
+You may also like
+View Cart
+Document
+AGE VERIFICATION
+To use the MR FOG Online website, you
+must be aged 21 years or older. Please
+verify your age before entering the site.
+Are you 21 years or older?
+YES (21+)
+NO (Under 21)
+
+EXTRACTED PRODUCT INFORMATION
+Product: MR FOG Official Online Store | Premium Vapes & Accessories
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
+
+Product: MR FOG PRODUCT
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
+
+Product: AURA 60K
+Category: AURA / AURA Splash
+Price: 
+Source: https://www.mrfog.online/
+
+Product: AURA Splash
+Category: AURA / AURA Splash
+Price: 
+Source: https://www.mrfog.online/
+
+Product: NOVA POPUP
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/
+
+Product: NOVA MAGIC COTTON
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/
+
+Product: NOVA BUBBLE GANG
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/
+
+Product: NOVA BANANA STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/
+
+Product: NOVA APPLE STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/
+
+Product: NOVA LEMON STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/
+
+Product: NOVA MELLOW MAN
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/
+
+Product: NOVA PEACH STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/
+
+Product: NOVA BERRY STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/
+
+Product: NOVA BLUE RAZZ STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/
+
+Product: NOVA MINT STEEZY
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/
+
+Product: NOVA ORIGINAL
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/
+
+Product: SWITCH 15000
+Category: SWITCH 15000
+Price: 
+Source: https://www.mrfog.online/
+
+Product: SWITCH 5500
+Category: SWITCH 5500
+Price: 
+Source: https://www.mrfog.online/
+
+Product: MAX AIR 8500
+Category: MAX AIR 8500
+Price: 
+Source: https://www.mrfog.online/
+
+Product: MAX AIR 3000
+Category: MAX AIR 3000
+Price: 
+Source: https://www.mrfog.online/
+
+Product: MAX PRO 2000
+Category: MAX PRO
+Price: 
+Source: https://www.mrfog.online/
+
+Product: MR FOG PODS
+Category: Pods / Accessories
+Price: 
+Source: https://www.mrfog.online/
+
+Product: BLUE RAZZ STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
+
+Product: APPLE STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
+
+Product: BANANA STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
+
+Product: BERRY STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
+
+Product: LEMON STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
+
+Product: MINT STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
+
+Product: PEACH STEEZY
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
+
+Product: SWITCH POD KIT
+Category: SWITCH POD
+Price: 
+Source: https://www.mrfog.online/
+
+Product: SWITCH POD KIT SPLASH
+Category: SWITCH POD
+Price: $24.99
+Source: https://www.mrfog.online/
+
+Product: SWITCH POD PODS
+Category: SWITCH POD
+Price: $24.99
+Source: https://www.mrfog.online/
+
+Product: SWITCH POD PODS SPLASH
+Category: SWITCH POD
+Price: $24.99
+Source: https://www.mrfog.online/
+
+Product: SWITCH POD POWER BANK
+Category: SWITCH POD
+Price: $24.99
+Source: https://www.mrfog.online/
+
+Product: DRT
+Category: DRT Open System
+Price: $24.99
+Source: https://www.mrfog.online/
+
+Product: Classic – MR FOG NOVA Mint Steezy 36K Disposable Vape
+Category: NOVA
+Price: $24.99
+Source: https://www.mrfog.online/
+
+Product: Powered By MR FOG
+Category: Other
+Price: $6.99
+Source: https://www.mrfog.online/
+
+Product: DOOZY ICE CUBE
+Category: Powered By MR FOG / DOOZY
+Price: $6.99
+Source: https://www.mrfog.online/
+
+Product: DOOZY DZ5000
+Category: Powered By MR FOG / DOOZY
+Price: $6.99
+Source: https://www.mrfog.online/
+
+Product: DOOZY DZ5000 5000 PUFFS Mango Peach Apricot
+Category: Powered By MR FOG / DOOZY
+Price: $6.99
+Source: https://www.mrfog.online/
+
+Product: Enjoy 60,000 puffs of lasting satisfaction—your smarter choice.
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
+
+Product: AURA
+Category: AURA / AURA Splash
+Price: 
+Source: https://www.mrfog.online/
+
+Product: Easy To Vape With Three Modes
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
+
+Product: DRT POD KIT
+Category: DRT Open System
+Price: 
+Source: https://www.mrfog.online/
+
+Product: NEW STEEZY SERIES
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
+
+Product: DOOZY ICE CUBE Blueberry Ice
+Category: Powered By MR FOG / DOOZY
+Price: $19.99
+Source: https://www.mrfog.online/
+
+Product: DOOZY DZ5000 5000 PUFFS Rainbow Candy
+Category: Powered By MR FOG / DOOZY
+Price: $4.51
+Source: https://www.mrfog.online/
+
+Product: Banana Strawberry Kiwi - MR FOG Max Air 3000 Puffs Disposable Vape
+Category: MAX AIR 3000
+Price: $9.99
+Source: https://www.mrfog.online/
+
+Product: Double Apple - MR FOG Max Air 8500 Puffs Disposable Vape
+Category: MAX AIR 8500
+Price: $20.99
+Source: https://www.mrfog.online/
+
+Product: Strawberry Guava - MR FOG Max Pro 2000 Puffs Disposable Vape
+Category: MAX PRO
+Price: $7.99
+Source: https://www.mrfog.online/
+
+Product: Blackberry – MR FOG NOVA Blue Razz Steezy 36K Disposable Vape
+Category: NOVA
+Price: $12.00
+Source: https://www.mrfog.online/
+
+Product: Menthol – MR FOG NOVA Mint Steezy 36K Disposable Vape
+Category: NOVA
+Price: $12.00
+Source: https://www.mrfog.online/
+
+Product: Cherry Watermelon Ice – MR FOG NOVA 36K Disposable Vape
+Category: NOVA
+Price: $12.00
+Source: https://www.mrfog.online/
+
+Product: Gold Edition (0mg) – MR FOG Switch 15000 Puffs Disposable Vape
+Category: SWITCH 15000
+Price: $15.99
+Source: https://www.mrfog.online/
+
+Product: Grape Blue Raspberry Lemon Ice - MR FOG Max 1000 Puffs Disposable Vape
+Category: MAX 1000
+Price: $14.99
+Source: https://www.mrfog.online/
+
+Product: MR FOG BERRY STEEZY 30ML BLUE RASPBERRY 35MG
+Category: E-Liquid / Vapor Fluid
+Price: $14.99
+Source: https://www.mrfog.online/
+
+Product: MR FOG BLUE RAZZ STEEZY 30ML STRAWBERRY 35MG
+Category: E-Liquid / Vapor Fluid
+Price: $13.49
+Source: https://www.mrfog.online/
+
+Product: MR FOG APPLE STEEZY 60ML BLUE RASPBERRY 3MG
+Category: E-Liquid / Vapor Fluid
+Price: $17.49
+Source: https://www.mrfog.online/
+
+Product: MR FOG BLUE RAZZ STEEZY 30ML GRAPE 35MG
+Category: E-Liquid / Vapor Fluid
+Price: $1.75
+Source: https://www.mrfog.online/
+
+Product: MR FOG BLUE RAZZ STEEZY 30ML RASPBERRY 50MG
+Category: E-Liquid / Vapor Fluid
+Price: $1.75
+Source: https://www.mrfog.online/
+
+Product: MR FOG APPLE STEEZY 30ML WATERMELON 35MG
+Category: E-Liquid / Vapor Fluid
+Price: $1.75
+Source: https://www.mrfog.online/
+
+Product: MR FOG MELLOW MAN 30ML STRAWBERRY 50MG
+Category: Other
+Price: $1.75
+Source: https://www.mrfog.online/
+
+Product: MR FOG BLUE RAZZ STEEZY 30ML WATERMELON 35MG
+Category: E-Liquid / Vapor Fluid
+Price: $1.75
+Source: https://www.mrfog.online/
+
+Product: MR FOG BLUE RAZZ STEEZY 60ML WATERMELON 3MG
+Category: E-Liquid / Vapor Fluid
+Price: $15.74
+Source: https://www.mrfog.online/
+
+Product: MR FOG BLUE RAZZ STEEZY 30ML WATERMELON 50MG
+Category: E-Liquid / Vapor Fluid
+Price: 
+Source: https://www.mrfog.online/
+
+Product: California Cherry – MR FOG Switch Pod Kit 45K Puffs
+Category: SWITCH POD
+Price: 
+Source: https://www.mrfog.online/
+
+Product: Grape Popup – MR FOG Switch Pod Kit 45K Puffs
+Category: SWITCH POD
+Price: 
+Source: https://www.mrfog.online/
+
+Product: Blue Razz Blow Pop – MR FOG Switch Pod Kit 45K Puffs
+Category: SWITCH POD
+Price: 
+Source: https://www.mrfog.online/
+
+Product: Blue Raspberry Cherry Ice – MR FOG Switch Pod Kit 45K Puffs
+Category: SWITCH POD
+Price: 
+Source: https://www.mrfog.online/
+
+Product: Watermelon Bubble Gang – MR FOG Switch Pod Kit 45K Puffs
+Category: SWITCH POD
+Price: $22.99
+Source: https://www.mrfog.online/
+
+Product: Strawberry Bubble Gang – MR FOG Switch Pod Kit 45K Puffs
+Category: SWITCH POD
+Price: $22.99
+Source: https://www.mrfog.online/
+
+Product: Peach Watermelon – MR FOG Switch Pod Kit 45K Puffs
+Category: SWITCH POD
+Price: $22.99
+Source: https://www.mrfog.online/
+
+Product: Peach Berry – MR FOG Switch Pod Kit 45K Puffs
+Category: SWITCH POD
+Price: $22.99
+Source: https://www.mrfog.online/
+
+Product: Virginia Classic – MR FOG Switch Pod Kit 45K Puffs
+Category: SWITCH POD
+Price: $22.99
+Source: https://www.mrfog.online/
+
+Product: Mint Menthol Ice – MR FOG Switch Pod Kit 45K Puffs
+Category: SWITCH POD
+Price: $22.99
+Source: https://www.mrfog.online/
+
+Product: MR FOG DRT POD KIT RED CARBON
+Category: DRT Open System
+Price: $22.99
+Source: https://www.mrfog.online/
+
+Product: MR FOG DRT POD KIT PURPLE CARBON
+Category: DRT Open System
+Price: $7.49
+Source: https://www.mrfog.online/
+
+Product: MR FOG DRT POD KIT PINK CARBON
+Category: DRT Open System
+Price: $7.49
+Source: https://www.mrfog.online/
+
+Product: MR FOG DRT POD KIT GREY CARBON
+Category: DRT Open System
+Price: $7.49
+Source: https://www.mrfog.online/
+
+Product: MR FOG DRT POD KIT GOLD CARBON
+Category: DRT Open System
+Price: $7.49
+Source: https://www.mrfog.online/
+
+Product: MR FOG DRT POD KIT BLUE CARBON
+Category: DRT Open System
+Price: $7.49
+Source: https://www.mrfog.online/
+
+Product: MR FOG DRT DUAL RESISTANCE REFILLABLE POD 0.6/1.2Ω (2 PCS)
+Category: DRT Open System
+Price: $7.49
+Source: https://www.mrfog.online/
+
+Product: MR FOG DRT Dual Resistance Refillable Pod 0.4/0.8Ω (2 PCS)
+Category: DRT Open System
+Price: $26.99
+Source: https://www.mrfog.online/
+
+Product: MR FOG 5-in-1 CHARGER CABLE
+Category: Other
+Price: $26.99
+Source: https://www.mrfog.online/
+
+Product: Grape – MR FOG AURA Splash 60K Disposable Vape
+Category: AURA / AURA Splash
+Price: $26.99
+Source: https://www.mrfog.online/
+
+Product: Blue Raspberry – MR FOG AURA Splash 60K Disposable Vape
+Category: AURA / AURA Splash
+Price: 
+Source: https://www.mrfog.online/
+
+Product: Sour Shock Blue Raspberry – MR FOG AURA 60K Disposable Vape
+Category: AURA / AURA Splash
+Price: 
+Source: https://www.mrfog.online/
+
+Product: Sour Watermelon – MR FOG AURA Splash 60K Disposable Vape
+Category: AURA / AURA Splash
+Price: 
+Source: https://www.mrfog.online/
+
+Product: Exotic Berry Fusion – MR FOG AURA 60K Disposable Vape
+Category: AURA / AURA Splash
+Price: 
+Source: https://www.mrfog.online/
+
+Product: Fantastic Orange – MR FOG AURA Splash 60K Disposable Vape
+Category: AURA / AURA Splash
+Price: 
+Source: https://www.mrfog.online/
+
+Product: Peach Apricot – MR FOG AURA 60K Disposable Vape
+Category: AURA / AURA Splash
+Price: $13.99
+Source: https://www.mrfog.online/
+
+Product: Mellow Man – MR FOG AURA Splash 60K Disposable Vape
+Category: AURA / AURA Splash
+Price: $13.99
+Source: https://www.mrfog.online/
+
+Product: Sour Apple Ice – MR FOG NOVA 36K Disposable Vape
+Category: NOVA
+Price: $13.99
+Source: https://www.mrfog.online/
+
+Product: Blueberry On Ice - MR FOG Max 1000 Puffs Disposable Vape
+Category: MAX 1000
+Price: $13.99
+Source: https://www.mrfog.online/
+
+Product: MR FOG PODS PACK OF 4 Pink Lemonade
+Category: Pods / Accessories
+Price: $13.99
+Source: https://www.mrfog.online/
+
+Product: MR FOG PODS PACK OF 4 Magic Cotton
+Category: Pods / Accessories
+Price: 
+Source: https://www.mrfog.online/
+
+Product: MR FOG PODS PACK OF 4 Blueberry Cherry
+Category: Pods / Accessories
+Price: 
+Source: https://www.mrfog.online/
+
+Product: Grape - MR FOG Max 1000 Puffs Disposable Vape
+Category: MAX 1000
+Price: 
+Source: https://www.mrfog.online/
+
+Product: Baccy - MR FOG Max Air 3000 Puffs Disposable Vape
+Category: MAX AIR 3000
+Price: 
+Source: https://www.mrfog.online/
+
+Product: Blue Rancher Ice – MR FOG NOVA Blue Razz Steezy 36K Disposable Vape
+Category: NOVA
+Price: 
+Source: https://www.mrfog.online/
+
+Product: MR FOG Online Store All rights reserved.
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
+
+Product: To use the MR FOG Online website, you
+Category: Other
+Price: 
+Source: https://www.mrfog.online/
