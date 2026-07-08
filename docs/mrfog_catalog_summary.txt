@@ -1,0 +1,147 @@
+Source URL: https://www.mrfog.com/
+Document Type: MR FOG Catalog Summary
+Purpose: This document summarizes the public MR FOG website product categories, product families, support pages, and compliance warnings for the RAG knowledge assistant.
+
+MR FOG WEBSITE OVERVIEW
+MR FOG is a nicotine/vape product brand website. The site includes product information, support pages, distributor information, verification, FAQ, contact, warranty, returns, and compliance pages.
+
+AGE AND NICOTINE WARNING
+The MR FOG website includes age verification. Users must be 21 years or older to use the MR FOG online website.
+The website states: "WARNING: This product contains nicotine. Nicotine is an addictive chemical."
+The website also includes a California Proposition 65 warning.
+
+MAIN PRODUCT CATEGORIES
+The MR FOG public website lists these main product categories:
+1. NOVA
+2. SWITCH SERIES
+3. MAX AIR SERIES
+4. MAX SERIES
+5. E-LIQUID
+6. NICOTINE POUCHES
+
+PRODUCT MENU GROUPS
+The public website navigation also groups products like this:
+
+Disposable:
+- SWITCH POD SPLASH
+- AURA SPLASH
+- SWITCH POD
+- AURA
+- NOVA Series
+
+E-Liquid:
+- Blue Razz Steezy
+- Mellow Man
+- Apple Steezy
+- Banana Steezy
+- Berry Steezy
+
+Open System:
+- DRT
+
+Nicotine Pouches:
+- Nicotine Pouches
+
+NOVA SERIES
+NOVA is a MR FOG disposable product series.
+The website describes NOVA as having:
+- Up to 36,000 puffs
+- 900mAh battery capacity
+- 20ml e-liquid capacity
+- 2.01 inch screen
+- Type-C charging
+- Color semi-transparent shell with textured inner shell
+- Adjustable modes: ECO, BOOST, TURBO
+
+NOVA related series/products mentioned in the website navigation:
+- NOVA Apple Steezy
+- NOVA Banana Steezy
+- NOVA Popup Series
+- NOVA Bubble Gang
+- NOVA Lemon Steezy
+
+SWITCH POD 45K
+SWITCH POD is a MR FOG product line.
+The website describes SWITCH POD 45K as having:
+- Up to 45,000 puffs
+- 1400mAh battery capacity
+- Type-C fast charging
+- Adjustable modes: ECO, BOOST, TURBO
+- Clear tank design
+- Pod with memory mode
+- Battery indicator
+- Adjustable brightness
+- Airflow control
+- Can be used with a power bank
+
+SWITCH POD flavors mentioned on the website include:
+- Blue Raspberry Cherry Ice
+- Watermelon Bubble Gang
+- Strawberry Bubble Gang
+- Blue Razz Blow Pop
+- Grape Popup
+- California Cherry
+- Peach Berry
+- Peach Watermelon
+- Blue Rancher Blow Pop
+- Strawberry Blow Pop
+- Strawberry J
+- Shaking Peach
+- Miami Mint
+- Mint Menthol Ice
+- Blueberry Raspberry Lemon
+- Coffee
+- Virginia Tobacco
+- Pink Lemon Sour Blueberry
+
+DRT OPEN SYSTEM
+DRT is MR FOG's open-system device.
+DRT stands for Dual-Resistance Technology.
+The website describes DRT as offering two resistance options in one pod.
+DRT features include:
+- Dual-Resistance Technology
+- Two resistances in one pod
+- 1400mAh battery
+- Dual mesh coils
+- ECO and BOOST modes
+- 5W to 30W power range
+- 0.4Ω/0.8Ω pod option
+- 0.6Ω/1.2Ω pod option
+- Type-C charging
+- HD color screen
+- 3 UI themes
+- Airflow control
+- Top-filling design
+- Anti-leak design
+- Scratch and drop resistant body
+
+SUPPORT PAGES
+The MR FOG website includes these support sections:
+- Verification
+- FAQ
+- Contact us
+- Distributors
+- Brand Friends Recruitment
+- Service Claim
+
+COMPLIANCE PAGES
+The MR FOG website includes these compliance sections:
+- Marketing Principles
+- Terms and Conditions
+- Privacy Policy
+- Returns and Refunds
+- Warranty Policy
+
+HOW TO ANSWER PRODUCT QUESTIONS
+If a user asks "how many product categories do we have?", answer:
+MR FOG's public website lists 6 main product categories: NOVA, SWITCH SERIES, MAX AIR SERIES, MAX SERIES, E-LIQUID, and NICOTINE POUCHES.
+
+If a user asks "what products are listed?", answer using the Product Menu Groups section.
+
+If a user asks about NOVA, use the NOVA SERIES section.
+
+If a user asks about SWITCH POD, use the SWITCH POD 45K section.
+
+If a user asks about DRT, use the DRT OPEN SYSTEM section.
+
+If a user asks about support, warranty, returns, contact, verification, or distributors, use the SUPPORT PAGES and COMPLIANCE PAGES sections.

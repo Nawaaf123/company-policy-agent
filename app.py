@@ -20,13 +20,14 @@ print("Loading company documents...")
 
 docs = []
 
-for filename in os.listdir("docs"):
-    if filename.endswith(".txt"):
-        file_path = os.path.join("docs", filename)
-        loader = TextLoader(file_path, encoding="utf-8")
-        loaded_docs = loader.load()
-        docs.extend(loaded_docs)
-        print(f"Loaded: {filename}")
+for root, dirs, files in os.walk("docs"):
+    for filename in files:
+        if filename.endswith(".txt"):
+            file_path = os.path.join(root, filename)
+            loader = TextLoader(file_path, encoding="utf-8")
+            loaded_docs = loader.load()
+            docs.extend(loaded_docs)
+            print(f"Loaded: {file_path}")
 
 print(f"Total documents loaded: {len(docs)}")
 
@@ -37,8 +38,8 @@ print(f"Total documents loaded: {len(docs)}")
 print("\nSplitting documents into chunks...")
 
 splitter = RecursiveCharacterTextSplitter(
-    chunk_size=500,
-    chunk_overlap=50
+    chunk_size=1200,
+    chunk_overlap=150
 )
 
 chunks = splitter.split_documents(docs)
@@ -62,8 +63,13 @@ vectorstore = Chroma.from_documents(
 )
 
 retriever = vectorstore.as_retriever(
-    search_kwargs={"k": 3}
+    search_type="mmr",
+    search_kwargs={
+        "k": 10,
+        "fetch_k": 30
+    }
 )
+
 
 print("Vector database ready.")
 
@@ -94,28 +100,7 @@ class AgentState(TypedDict):
 # 6. Supervisor Agent
 # -----------------------------
 def supervisor_agent(state: AgentState):
-    question = state["question"].lower()
-
-    policy_keywords = [
-         "policy",
-         "reimbursement",
-         "travel",
-         "remote",
-         "laptop",
-         "contractor",
-         "employee",
-         "work from home",
-         "pto",
-         "paid time off",
-         "vacation",
-         "leave",
-         "time off"
-    ]
-
-    if any(word in question for word in policy_keywords):
-        intent = "document_question"
-    else:
-        intent = "general_question"
+    intent = "document_question"
 
     print(f"\n[Supervisor Agent] Intent detected: {intent}")
 
@@ -134,18 +119,23 @@ def retrieval_agent(state: AgentState):
 
     retrieved_docs = []
 
-    for doc in results:
+    print("\n--- Retrieved Documents Preview ---")
+
+    for index, doc in enumerate(results, start=1):
         source = doc.metadata.get("source", "Unknown source")
         content = doc.page_content
 
+        print(f"\nResult {index}")
+        print(f"Source: {source}")
+        print(content[:500])
+
         retrieved_docs.append(f"Source: {source}\nContent: {content}")
 
-    print(f"[Retrieval Agent] Retrieved {len(retrieved_docs)} chunks.")
+    print(f"\n[Retrieval Agent] Retrieved {len(retrieved_docs)} chunks.")
 
     return {
         "documents": retrieved_docs
     }
-
 
 # -----------------------------
 # 8. Answer Agent
@@ -160,7 +150,13 @@ You are an enterprise company knowledge assistant.
 
 Answer the user's question only using the provided company context.
 Do not make up information.
-At the end of the answer, mention the source document name if available.
+
+If the user asks about MR FOG products, product categories, flavors, devices, specifications, wholesale, distributor information, contact information, warranty, returns, or FAQ, answer using the retrieved MR FOG website context.
+
+If the retrieved context contains related MR FOG information, summarize it clearly.
+Only say "I do not have enough information in the company documents" when the retrieved context has no relevant information at all.
+
+At the end of your answer, mention the source document name from the context.
 
 If the answer is not available in the company context, say:
 "I do not have enough information in the company documents."
@@ -208,11 +204,7 @@ def guardrail_agent(state: AgentState):
 # 10. Routing Function
 # -----------------------------
 def route_after_supervisor(state: AgentState):
-    if state["intent"] == "document_question":
-        return "retrieve"
-    else:
-        return "answer"
-
+    return "retrieve"
 
 # -----------------------------
 # 11. Build LangGraph Workflow
@@ -239,20 +231,14 @@ workflow.add_edge("retrieve", "answer")
 workflow.add_edge("answer", "guardrail")
 workflow.add_edge("guardrail", END)
 
-app = workflow.compile()
+agent_app = workflow.compile()
 
 
 # -----------------------------
-# 12. Run Chatbot
+# 12. Function for UI or CLI
 # -----------------------------
-while True:
-    user_question = input("\nUser Question: ")
-
-    if user_question.lower() in ["exit", "quit"]:
-        print("Goodbye.")
-        break
-
-    result = app.invoke({
+def ask_question(user_question: str):
+    result = agent_app.invoke({
         "question": user_question,
         "intent": "",
         "documents": [],
@@ -260,8 +246,24 @@ while True:
         "grounded": False
     })
 
-    print("\nFinal Answer:")
-    print(result["answer"])
+    return result
 
-    print("\nGrounded:")
-    print(result["grounded"])
+
+# -----------------------------
+# 13. Run Chatbot in Terminal
+# -----------------------------
+if __name__ == "__main__":
+    while True:
+        user_question = input("\nUser Question: ")
+
+        if user_question.lower() in ["exit", "quit"]:
+            print("Goodbye.")
+            break
+
+        result = ask_question(user_question)
+
+        print("\nFinal Answer:")
+        print(result["answer"])
+
+        print("\nGrounded:")
+        print(result["grounded"])
