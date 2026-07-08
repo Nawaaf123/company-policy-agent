@@ -132,7 +132,13 @@ def retrieval_agent(state: AgentState):
 
     results = retriever.invoke(state["question"])
 
-    retrieved_docs = [doc.page_content for doc in results]
+    retrieved_docs = []
+
+    for doc in results:
+        source = doc.metadata.get("source", "Unknown source")
+        content = doc.page_content
+
+        retrieved_docs.append(f"Source: {source}\nContent: {content}")
 
     print(f"[Retrieval Agent] Retrieved {len(retrieved_docs)} chunks.")
 
@@ -154,6 +160,7 @@ You are an enterprise company knowledge assistant.
 
 Answer the user's question only using the provided company context.
 Do not make up information.
+At the end of the answer, mention the source document name if available.
 
 If the answer is not available in the company context, say:
 "I do not have enough information in the company documents."
