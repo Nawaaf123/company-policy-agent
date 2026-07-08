@@ -1,0 +1,4 @@
+Employees must submit travel reimbursement requests within 30 days of completing travel.
+Receipts are required for hotel, flight, meals, and taxi expenses.
+Manager approval is required before finance review.
+Approved reimbursements are processed within 7 to 10 business days.
