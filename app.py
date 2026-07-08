@@ -97,14 +97,19 @@ def supervisor_agent(state: AgentState):
     question = state["question"].lower()
 
     policy_keywords = [
-        "policy",
-        "reimbursement",
-        "travel",
-        "remote",
-        "laptop",
-        "contractor",
-        "employee",
-        "work from home"
+         "policy",
+         "reimbursement",
+         "travel",
+         "remote",
+         "laptop",
+         "contractor",
+         "employee",
+         "work from home",
+         "pto",
+         "paid time off",
+         "vacation",
+         "leave",
+         "time off"
     ]
 
     if any(word in question for word in policy_keywords):
