@@ -1,5 +1,8 @@
 import os
 import re
+import math
+import pandas as pd
+import requests
 from typing import TypedDict, List
 from dotenv import load_dotenv
 
@@ -292,7 +295,132 @@ agent_app = workflow.compile()
 # -----------------------------
 # 12. Function for UI or CLI
 # -----------------------------
+
+WHOLESALER_FILE = os.path.join("data", "wholesalers_geocoded.csv")
+
+
+def is_nearest_wholesaler_question(question: str) -> bool:
+    q = question.lower()
+
+    keywords = [
+        "nearest wholesaler",
+        "closest wholesaler",
+        "nearby wholesaler",
+        "where can i get",
+        "where can i buy",
+        "near me",
+        "near my address"
+    ]
+
+    return any(keyword in q for keyword in keywords)
+
+
+def geocode_user_address(address: str):
+    mapbox_token = os.getenv("MAPBOX_ACCESS_TOKEN")
+
+    if not mapbox_token:
+        raise ValueError("MAPBOX_ACCESS_TOKEN is missing")
+
+    url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + requests.utils.quote(address) + ".json"
+
+    params = {
+        "access_token": mapbox_token,
+        "country": "us",
+        "limit": 1
+    }
+
+    response = requests.get(url, params=params, timeout=20)
+    response.raise_for_status()
+
+    data = response.json()
+    features = data.get("features", [])
+
+    if not features:
+        return None, None
+
+    coordinates = features[0]["center"]
+
+    longitude = coordinates[0]
+    latitude = coordinates[1]
+
+    return latitude, longitude
+
+
+def haversine_miles(lat1, lon1, lat2, lon2):
+    radius_miles = 3958.8
+
+    lat1 = math.radians(float(lat1))
+    lon1 = math.radians(float(lon1))
+    lat2 = math.radians(float(lat2))
+    lon2 = math.radians(float(lon2))
+
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+
+    a = (
+        math.sin(dlat / 2) ** 2
+        + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2) ** 2
+    )
+
+    c = 2 * math.asin(math.sqrt(a))
+
+    return radius_miles * c
+
+
+def find_nearest_wholesaler(user_address: str):
+    if not os.path.exists(WHOLESALER_FILE):
+        return "Wholesaler location file is missing. Please create data/wholesalers_geocoded.csv first."
+
+    user_lat, user_lon = geocode_user_address(user_address)
+
+    if user_lat is None or user_lon is None:
+        return "I could not understand that address. Please enter a complete address with city and state."
+
+    df = pd.read_csv(WHOLESALER_FILE)
+
+    df = df.dropna(subset=["latitude", "longitude"])
+
+    if df.empty:
+        return "No geocoded wholesaler locations are available."
+
+    nearest = None
+    nearest_distance = None
+
+    for _, row in df.iterrows():
+        distance = haversine_miles(
+            user_lat,
+            user_lon,
+            row["latitude"],
+            row["longitude"]
+        )
+
+        if nearest_distance is None or distance < nearest_distance:
+            nearest_distance = distance
+            nearest = row
+
+    if nearest is None:
+        return "I could not find a nearby wholesaler."
+
+    return f"""The nearest wholesaler is:
+
+{nearest["name"]}
+
+Address:
+{nearest["address"]}"""
+
+
 def ask_question(user_question: str):
+    if is_nearest_wholesaler_question(user_question):
+        answer = find_nearest_wholesaler(user_question)
+
+        return {
+            "question": user_question,
+            "intent": "nearest_wholesaler",
+            "documents": [],
+            "answer": answer,
+            "grounded": True
+        }
+
     result = agent_app.invoke({
         "question": user_question,
         "intent": "",
